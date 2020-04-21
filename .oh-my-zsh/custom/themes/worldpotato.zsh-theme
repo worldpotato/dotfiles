@@ -34,6 +34,8 @@ prompt_setup_worldpotato(){
   post_prompt_nocolor=$(echo "$post_prompt" | perl -pe "s/%\{[^}]+\}//g")
 
   precmd_functions+=(prompt_worldpotato_precmd)
+
+  RPROMPT=''
 }
 
 

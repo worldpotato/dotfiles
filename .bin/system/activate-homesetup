@@ -1,6 +1,6 @@
 #!/bin/sh
 ~/.bin/display/display-home
 
-xmodmap ~/.Xmodmap
 bluetoothctl power on
 
+xmodmap ~/.Xmodmap
