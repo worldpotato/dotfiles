@@ -12,7 +12,7 @@ ZSH_THEME="worldpotato"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt git-extras httpie command-not-found extract sudo colored-man-pages zsh-syntax-highlighting pass fzf z gpg-agent rsync)
+plugins=(git git-flow git-prompt git-extras httpie command-not-found extract sudo colored-man-pages zsh-syntax-highlighting pass fzf z gpg-agent rsync)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,3 +89,8 @@ alias corona='curl -L covid19.trackercli.com/history/germany'
 
 alias ps="ps auxf" # show all processes, display user-oriented format, show processes that aren't attached to ttys, use full-format listing
 alias psg="\ps aux | rg -v rg | rg -i -e VSZ -e" # search for a running process. example: psg firefox
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source ~/repos/thermal-mapping-ros/devel_debug/setup.zsh
+
