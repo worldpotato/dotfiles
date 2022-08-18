@@ -1,0 +1,25 @@
+- name: Install/Update sudo
+  pacman:
+    name:
+    - sudo
+    state: latest
+
+- name: Install sudoers file
+  copy:
+    src: ./configs/sudo/sudoers
+    dest: /etc/sudoers
+  become: true
+
+- name: Install polybar launch script
+  copy:
+    src: ./configs/polybar/launch.sh
+    dest: ~/.config/polybar/launch.sh
+    mode: a+x
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /etc/sudoers
+    owner: root
+    group: root
+    mode: '0440'
+  become: true
