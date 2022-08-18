@@ -1,0 +1,18 @@
+- name: Install/Update kitty and optional libraries
+  pacman:
+    name:
+      - kitty
+      - kitty-shell-integration
+      - kitty-terminfo
+    state: latest
+
+- name: Create kitty config directory
+  file:
+    path: ~/.config/kitty
+    state: directory
+
+- name: Install kitty config
+  copy:
+    src: ./configs/kitty/kitty.conf
+    dest: ~/.config/kitty/kitty.conf
+
