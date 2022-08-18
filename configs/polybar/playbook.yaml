@@ -1,0 +1,21 @@
+ - name: create polybar config directory
+   file:
+     path: ~/.config/polybar
+     state: directory
+
+ - name: Install polybar config
+   copy:
+     src: ./configs/polybar/config
+     dest: ~/.config/polybar/config
+
+ - name: Install polybar launch script
+   copy:
+     src: ./configs/polybar/launch.sh
+     dest: ~/.config/polybar/launch.sh
+     mode: a+x
+
+ - name: Install/Update polybar and optional libraries
+   pacman:
+     name:
+       - polybar
+     state: latest
