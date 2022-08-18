@@ -1,0 +1,14 @@
+---
+- name: Include Config Playbooks
+  hosts: localhost
+  gather_facts: false
+  # become: true
+  tasks:
+    - include_tasks: ./configs/kitty/playbook.yaml
+    - include_tasks: ./configs/sudo/playbook.yaml
+    - include_tasks: ./configs/qutebrowser/playbook.yaml
+    - include_tasks: ./configs/xorg/playbook.yaml
+    - include_tasks: ./configs/i3/playbook.yaml
+    - include_tasks: ./configs/polybar/playbook.yaml
+    - include_tasks: ./configs/nvim/playbook.yaml
+
