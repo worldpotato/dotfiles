@@ -1,10 +1,13 @@
-  - name: Print Qutebrowser installation
-    debug:
-      msg: Install Qutebrowser
+  - name: Create qutebrowser config directory
+    file:
+      path: ~/.config/qutebrowser
+      state: directory
+
   - name: Copy Config to destination
     copy:
       src: ./configs/qutebrowser
       dest: ~/.config/qutebrowser
+
   - name: Install/Update Qutebrowser and optional libraries
     pacman:
       name:
