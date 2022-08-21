@@ -8,6 +8,16 @@
       src: ./configs/qutebrowser/config.py
       dest: ~/.config/qutebrowser/config.py
 
+  - name: Copy bookmarks to destination
+    copy:
+      src: ./configs/qutebrowser/bookmarks/
+      dest: ~/.config/qutebrowser/bookmarks/
+
+  - name: Copy quickmarks to destination
+    copy:
+      src: ./configs/qutebrowser/quickmarks/
+      dest: ~/.config/qutebrowser/quickmarks/
+
   - name: Install/Update Qutebrowser and optional libraries
     pacman:
       name:
