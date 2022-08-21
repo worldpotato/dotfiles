@@ -25,7 +25,7 @@ font fixed
     set $ws_private 﫸
 
     # application
-    set $dmenu dmenu_run
+    set $dmenu rofi -show combi
     set $logoutBar i3-msg exit
     set $polybar $HOME/.config/polybar/launch.sh
     set $lockScreen $HOME/.bin/system/lock-screen
