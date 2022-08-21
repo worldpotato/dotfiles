@@ -1,0 +1,7 @@
+notebooks:
+  hosts:
+    notebook-virus
+
+desktops:
+  hosts:
+    desktop-virus
