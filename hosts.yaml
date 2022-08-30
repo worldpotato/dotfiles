@@ -1,6 +1,7 @@
 notebooks:
   hosts:
     notebook-virus
+    # localhost
 
 desktops:
   hosts:
