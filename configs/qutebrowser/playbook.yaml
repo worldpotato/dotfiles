@@ -16,8 +16,8 @@
 
   - name: Copy quickmarks to destination
     copy:
-      src: ./configs/qutebrowser/quickmarks/
-      dest: ~/.config/qutebrowser/quickmarks/
+      src: ./configs/qutebrowser/quickmarks
+      dest: ~/.config/qutebrowser/quickmarks
     ignore_errors: yes
 
   - name: Install/Update Qutebrowser and optional libraries
