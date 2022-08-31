@@ -13,6 +13,6 @@
 
 - name: Install kitty config
   copy:
-    src: ./configs/kitty/kitty.conf
-    dest: ~/.config/kitty/kitty.conf
+    src: ./configs/kitty/
+    dest: ~/.config/kitty/
 
