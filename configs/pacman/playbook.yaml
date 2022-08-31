@@ -1,0 +1,14 @@
+- name: Run the equivalent of "pacman -Syu" as a separate step
+  # Since community.general 5.0.0 the 'changed' state of this call
+  # will be 'true' in case the cache was updated, or when a package
+  # was updated.
+  #
+  # The previous behavior was to only indicate whether something was
+  # upgraded. To keep the old behavior, add the following to the task:
+  #
+  #   register: result
+  #   changed_when: result.packages | length > 0
+  community.general.pacman:
+    update_cache: yes
+    upgrade: yes
+  become: yes
