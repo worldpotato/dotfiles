@@ -7,7 +7,9 @@
    copy:
      src: ./configs/i3/config
      dest: ~/.config/i3/config
+
  - name: Install/Update i3 and optional libraries
    kewlfft.aur.aur:
      name: i3-gaps
      state: latest
+   become: yes
