@@ -1,3 +1,4 @@
+c = None
 config.load_autoconfig()
 
 # time until downloads get removed in ms
@@ -337,12 +338,12 @@ c.colors.tabs.selected.even.bg = base02
 
 # Enable dark mode
 c.colors.webpage.darkmode.policy.images = "never"
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False
 c.colors.webpage.darkmode.algorithm = "lightness-hsl"
 c.colors.webpage.darkmode.contrast = 0.1
 c.colors.webpage.darkmode.threshold.background = 100
 c.colors.webpage.darkmode.threshold.text = 200
-
+c.colors.webpage.darkmode.policy.page = "smart"
 
 # default
 c.colors.webpage.bg = base00
