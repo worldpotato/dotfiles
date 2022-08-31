@@ -1,0 +1,166 @@
+" nvim-lsp config
+
+let g:neoterm_default_mod = "botright"
+let g:neoterm_size = 10
+
+let g:termdebug_wide = 10
+let g:termdebug_use_prompt = 0
+
+" use lightline-buffer in lightline
+set noshowmode
+set showtabline=2
+" lightline-buffer ui settings
+" replace these symbols with ascii characters if your environment does not support unicode
+let g:lightline_buffer_logo = ' '
+let g:lightline_buffer_readonly_icon = ''
+let g:lightline_buffer_modified_icon = '✭'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '◀ '
+let g:lightline_buffer_expand_right_icon = ' ▶'
+let g:lightline_buffer_active_buffer_left_icon = ''
+let g:lightline_buffer_active_buffer_right_icon = ''
+let g:lightline_buffer_separator_icon = '  '
+" enable devicons, only support utf-8
+" require <https://github.com/ryanoasis/vim-devicons>
+let g:lightline_buffer_enable_devicons = 1
+" lightline-buffer function settings
+let g:lightline_buffer_show_bufnr = 1
+" :help filename-modifiers
+let g:lightline_buffer_fname_mod = ':t'
+" hide buffer list
+let g:lightline_buffer_excludes = ['vimfiler']
+" max file name length
+let g:lightline_buffer_maxflen = 30
+" max file extension length
+let g:lightline_buffer_maxfextlen = 3
+" min file name length
+let g:lightline_buffer_minflen = 16
+" min file extension length
+let g:lightline_buffer_minfextlen = 3
+" reserve length for other component (e.g. info, close)
+let g:lightline_buffer_reservelen = 20
+let g:lightline = {
+    \ 'colorscheme': 'colorpotato',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'tabline': {
+    \   'left': [ [ 'bufferinfo' ],
+    \             [ 'separator' ],
+    \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+    \   'right': [],
+    \ },
+    \ 'component_expand': {
+    \   'buffercurrent': 'lightline#buffer#buffercurrent',
+    \   'bufferbefore': 'lightline#buffer#bufferbefore',
+    \   'bufferafter': 'lightline#buffer#bufferafter',
+    \ },
+    \ 'component_type': {
+    \   'buffercurrent': 'tabsel',
+    \   'bufferbefore': 'raw',
+    \   'bufferafter': 'raw',
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'FugitiveHead',
+    \   'bufferinfo': 'lightline#buffer#bufferinfo',
+    \ },
+    \ 'component': {
+    \   'separator': '',
+    \ },
+    \ }
+
+" Syntax
+syntax on
+" color for the vertical and horizontal line
+set cursorline
+set cursorcolumn
+" Height of the command bar
+set cmdheight=2
+" Behavior of tab stop
+set expandtab
+set tabstop=2
+set shiftwidth=2
+" FONT
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono
+" Highlight search results
+set hlsearch
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=10
+" autoreads a file if it is changed outside
+set autoread
+" break the line at the end or start of a word
+set linebreak
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+" Ignore case when searching
+set ignorecase
+" When searching try to be smart about cases
+set smartcase
+" Makes search act like search in modern browsers
+set incsearch
+" share clipboard with x
+set clipboard+=unnamedplus
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+" show unprintable characters
+set listchars=eol:¬,tab:\┣━,trail:~,extends:>,precedes:<,
+set list
+" shows options for tabcompletion
+set wildmenu
+" add some sort of fuzzy completion
+set path+=**
+" enable to change buffer even if it has changes
+set hidden
+" remove weird "O" behaviour
+set ttimeout
+set ttimeoutlen=50
+
+" set the line number behaviour
+set number relativenumber
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" nnoremap <Leader>b :FzfLua buffers<cr>
+" nnoremap <Leader>f :FzfLua files<cr>
+" nnoremap <Leader>t :Tags<cr>
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:lsp_cxx_hl_use_text_props = 1
+
+let g:vimtex_compiler_method='latexmk'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_complete_close_braces = 0
+let g:vimtex_fold_enabled = 1
+
+let g:cmake_build_dir = 'build'
+let g:cmake_build_type = 'Debug'
+let g:cmake_reload_after_save = 1
+" nnoremap <leader>xc :CMake<cr>
+" nnoremap <leader>xb :CMakeBuild<cr>
+" nnoremap <leader>xR :CMakeReset<cr>
+" nnoremap <leader>xr :CMakeRun 
+" nnoremap <leader>xt :FZFCMakeSelectTarget<cr>
+
+inoremap <silent><expr> <C-Space> compe#complete()
+nnoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+let g:dap_virtual_text = v:true
