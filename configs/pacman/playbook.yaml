@@ -12,3 +12,4 @@
     update_cache: yes
     upgrade: yes
   become: yes
+  ignore_errors: yes
