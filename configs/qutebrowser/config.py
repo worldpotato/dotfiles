@@ -1,4 +1,3 @@
-c = None
 config.load_autoconfig()
 
 # time until downloads get removed in ms
