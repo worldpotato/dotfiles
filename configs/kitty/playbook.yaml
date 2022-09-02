@@ -5,6 +5,7 @@
       - kitty-shell-integration
       - kitty-terminfo
     state: latest
+  become: yes
 
 - name: Create kitty config directory
   file:
