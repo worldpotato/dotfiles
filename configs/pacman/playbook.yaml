@@ -13,3 +13,11 @@
     upgrade: yes
   become: yes
   ignore_errors: yes
+
+- name: Upgrade the system using yay, only act on AUR packages.
+  kewlfft.aur.aur:
+    update_cache: yes
+    upgrade: yes
+    use: yay
+    aur_only: yes
+  ignore_errors: yes
