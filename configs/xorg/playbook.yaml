@@ -4,18 +4,28 @@
       - xorg
     state: latest
 
-- name: copy config for mousepad
-  copy:
-    src: ./configs/xorg/70-synaptics.conf
-    dest: ~/.config/X11/xorg.conf.d/70-synaptics.conf
-
 - name: copy XCompose
   copy:
     src: ./configs/xorg/.XCompose
     dest: ~/.XCompose
 
-- name: Copy xinitrc to destination
-  copy:
-    src: ./configs/xorg/xinitrc
-    dest: ~/.xinitrc
+# block for notebooks
+- block:
+  - name: copy config for mousepad
+    copy:
+      src: ./configs/xorg/70-synaptics.conf
+      dest: ~/.config/X11/xorg.conf.d/70-synaptics.conf
 
+  - name: Copy xinitrc to destination for Notebooks
+    copy:
+      src: ./configs/xorg/xinitrc_notebooks
+      dest: ~/.xinitrc
+  when: inventory_hostname in groups['notebooks'] 
+
+# block for desktops
+- block: 
+  - name: Copy xinitrc to destination for desktop
+    copy:
+      src: ./configs/xorg/xinitrc_desktops
+      dest: ~/.xinitrc
+  when: inventory_hostname in groups['desktops'] 
