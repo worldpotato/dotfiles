@@ -1,32 +1,44 @@
-- block:
+- name: ROFI
+  tags:
+    rofi
+  block:
   - name: Install/Update rofi and optional libraries
     pacman:
       name:
         - rofi
       state: latest
     become: true
+    tags:
+      - install
 
-- name: Install/Update rofi-pass and optional libraries
-  kewlfft.aur.aur:
-   name: rofi-pass
-   state: latest
-  become: yes
+  - name: Install/Update rofi-pass and optional libraries
+    kewlfft.aur.aur:
+     name: rofi-pass
+     state: latest
+    become: yes
+    tags:
+      - install
 
-- name: copy rofi-pass config directory
-  copy:
-    src: ./configs/rofi/rofi-pass.conf
-    dest: /etc/rofi-pass.conf
-  become: yes
+  - name: Create symbolic link to passmenu
+    file:
+      src: /usr/bin/rofi-pass
+      dest: /usr/bin/passmenu
+      state: link
+    become: yes
+    tags:
+      - install
 
-- name: Create symbolic link to passmenu
-  file:
-    src: /usr/bin/rofi-pass
-    dest: /usr/bin/passmenu
-    state: link
-  become: yes
+  - name: copy rofi-pass config directory
+    copy:
+      src: ./configs/rofi/rofi-pass.conf
+      dest: /etc/rofi-pass.conf
+    become: yes
+    tags:
+      - config
 
-- name: Copy Rofi config to destination
-  copy:
-    src: ./configs/rofi/
-    dest: ~/.config/rofi/
-
+  - name: Copy Rofi config to destination
+    copy:
+      src: ./configs/rofi/
+      dest: ~/.config/rofi/
+    tags:
+      - config
