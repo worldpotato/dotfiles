@@ -1,16 +1,31 @@
 ---
+# used tags:
+# - install
+# - config
+# - <name of software>
+
 - name: Include Config Playbooks
   hosts: all
+  tags: all
   gather_facts: false
   # become: true
   tasks:
     - include_tasks: ./configs/rofi/playbook.yaml
+      tags: rofi
     - include_tasks: ./configs/pacman/playbook.yaml
+      tags: install
     - include_tasks: ./configs/i3/playbook.yaml
+      tags: i3
     - include_tasks: ./configs/sudo/playbook.yaml
+      tags: sudo
     - include_tasks: ./configs/kitty/playbook.yaml
+      tags: kitty
     - include_tasks: ./configs/qutebrowser/playbook.yaml
+      tags: qutebrowser
     - include_tasks: ./configs/xorg/playbook.yaml
+      tags: xorg
     - include_tasks: ./configs/polybar/playbook.yaml
+      tags: polybar
     - include_tasks: ./configs/nvim/playbook.yaml
+      tags: nvim
 
