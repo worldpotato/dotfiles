@@ -9,6 +9,11 @@
     src: ./configs/xorg/.XCompose
     dest: ~/.XCompose
 
+- name: copy Autostart
+  copy:
+    src: ./configs/xorg/autostart.sh
+    dest: ~/.local/share/autostart.sh
+
 # block for notebooks
 - block:
   - name: copy config for mousepad
