@@ -3,16 +3,19 @@
     name:
       - xorg
     state: latest
+  tags: install, xorg
 
 - name: copy XCompose
   copy:
     src: ./configs/xorg/.XCompose
     dest: ~/.XCompose
+  tags: config, xorg
 
 - name: copy Autostart
   copy:
     src: ./configs/xorg/autostart.sh
     dest: ~/.local/share/autostart.sh
+  tags: xorg, config
 
 # block for notebooks
 - block:
@@ -26,6 +29,7 @@
       src: ./configs/xorg/xinitrc_notebooks
       dest: ~/.xinitrc
   when: inventory_hostname in groups['notebooks'] 
+  tags: xorg, config
 
 # block for desktops
 - block: 
@@ -34,3 +38,4 @@
       src: ./configs/xorg/xinitrc_desktops
       dest: ~/.xinitrc
   when: inventory_hostname in groups['desktops'] 
+  tags: xorg, config
