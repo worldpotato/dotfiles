@@ -35,7 +35,6 @@ fi
 
 # start some nice programs
 $HOME/.local/share/autostart.sh &
-# $HOME/.bin/system/autostart.sh &
 
 setxkbmap -option altwin:swap_alt_win
 setxkbmap -option caps:swapescape
