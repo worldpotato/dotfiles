@@ -29,21 +29,21 @@ require("gitsigns").setup({
     ["o ih"] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
     ["x ih"] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
   },
-  -- watch_gitdir = {
-  --   interval = 1000,
-  --   follow_files = true,
-  -- },
-  -- current_line_blame = false,
-  -- current_line_blame_opts = {
-  --   virt_text = true,
-  --   virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-  --   delay = 1000,
-  -- },
+  watch_gitdir = {
+    interval = 1000,
+    follow_files = true,
+  },
+  current_line_blame = false,
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+    delay = 1000,
+  },
   sign_priority = 6,
   update_debounce = 100,
   status_formatter = nil, -- Use default
   word_diff = false,
-  -- diff_opts = {
-  --   internal = true -- If luajit is present
-  -- }
+  diff_opts = {
+    internal = true -- If luajit is present
+  }
 })

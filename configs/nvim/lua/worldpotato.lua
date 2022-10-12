@@ -2,7 +2,7 @@
 --  Maintainer:   Felix Strobel <mail@felixstrobel.de>
 --  Last Change:  15.08.2021
 --
--- Possible giu/cterm formats
+-- Possible gui/cterm formats
 -- bold
 -- underline
 -- undercurl
@@ -137,7 +137,7 @@ hi { group = "Comment",                              gui=none,          guifg=wp
 hi { group = "Constant",                             gui=none,          guifg=wp02}
 hi { group = "Special",                              gui=none,          guifg=wp14}
 hi { group = "Statement",                            gui=none,          guifg=wp12}
-hi { group = "Type",                                 gui=none,          guifg=wp04}
+hi { group = "Type",                                 gui=none,          guifg=wp12}
 --
 --  Line and column mark
 hi { group = "CursorLine",                           gui=none,                         guibg = wp00}
@@ -158,39 +158,39 @@ hi { group = "LspDiagnosticsVirtualTextInformation", gui='bold',          guifg=
 -- Treesitter
 hi { group = "TSAnnotation",                                            guifg=wp07,      guibg=wp00}
 hi { group = "TSAttribute",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSBoolean",                            gui='bold',        guifg=wp07}
+hi { group = "TSBoolean",                            gui='bold',        guifg=wp14}
 hi { group = "TSCharacter",                                             guifg=wp07,      guibg=wp00}
 hi { group = "TSComment",                                               guifg=wp06}
-hi { group = "TSConditional",                                           guifg=wp07,      guibg=wp00}
-hi { group = "TSConstant",                                              guifg=wp07,      guibg=wp00}
-hi { group = "TSConstBuiltin",                                          guifg=wp07,      guibg=wp00}
+hi { group = "TSConditional",                                           guifg=wp14}
+hi { group = "TSConstant",                           gui='bold',        guifg=wp06}
+hi { group = "TSConstBuiltin",                       gui='bold',        guifg=wp05}
 hi { group = "TSConstMacro",                                            guifg=wp07,      guibg=wp00}
-hi { group = "TSConstructor",                                           guifg=wp07}
-hi { group = "TSError",                                                 guifg=wp07,      guibg=wp00}
+hi { group = "TSConstructor",                        gui='bold',        guifg=wp05}
+hi { group = "TSError",                              gui='undercurl',   guifg=wp07,      guibg=wp00}
 hi { group = "TSException",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSField",                                                 guifg=wp15}
+hi { group = "TSField",                              gui='bold',        guifg=wp06}
 hi { group = "TSFloat",                                                 guifg=wp07,      guibg=wp00}
-hi { group = "TSFunction",                                              guifg=wp02}
+hi { group = "TSFunction",                                              guifg=wp12}
 hi { group = "TSFuncBuiltin",                                           guifg=wp02}
 hi { group = "TSFuncMacro",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSInclude",                            gui='italic',      guifg=wp07}
-hi { group = "TSKeyword",                                               guifg=wp12}
-hi { group = "TSKeywordFunction",                                       guifg=wp02}
-hi { group = "TSKeywordReturn",                                         guifg=wp15}
+hi { group = "TSInclude",                                               guifg=wp07,     guibg=wp08}
+hi { group = "TSKeyword",                            gui='bold',        guifg=wp11}
+hi { group = "TSKeywordFunction",                    gui='bold',        guifg=wp11}
+hi { group = "TSKeywordReturn",                      gui='bold',        guifg=wp11}
 hi { group = "TSLabel",                                                 guifg=wp07,      guibg=wp00}
-hi { group = "TSMethod",                             gui="bold",        guifg=wp03}
+hi { group = "TSMethod",                             gui="bold",        guifg=wp12}
 hi { group = "TSNamespace",                                             guifg=wp03}
 hi { group = "TSNone",                                                  guifg=wp07}
 hi { group = "TSNumber",                                                guifg=wp15}
-hi { group = "TSOperator",                                              guifg=wp15}
-hi { group = "TSParameter",                                             guifg=wp07,      guibg=wp00}
+hi { group = "TSOperator",                                              guifg=wp14}
+hi { group = "TSParameter",                          gui='bold',        guifg=wp09}
 hi { group = "TSParameterReference",                                    guifg=wp07,      guibg=wp00}
 hi { group = "TSProperty",                                              guifg=wp07}
 hi { group = "TSPunctDelimeter",                                        guifg=wp15,      guibg=wp00}
 hi { group = "TSPunctBracket",                                          guifg=wp15}
 hi { group = "TSPunctSpecial",                                          guifg=wp15}
-hi { group = "TSRepeat",                                                guifg=wp07,      guibg=wp00}
-hi { group = "TSString",                             gui='italic',      guifg=wp14}
+hi { group = "TSRepeat",                             gui='bold',        guifg=wp14}
+hi { group = "TSString",                             gui='bold',        guifg=wp03}
 hi { group = "TSStringRegex",                                           guifg=wp13}
 hi { group = "TSStringEscape",                                          guifg=wp13}
 hi { group = "TSStringSpecial",                                         guifg=wp13}
@@ -213,9 +213,9 @@ hi { group = "TSEnvironmentName",                                       guifg=wp
 hi { group = "TSNote",                                                  guifg=wp07,      guibg=wp00}
 hi { group = "TSWarning",                                               guifg=wp07,      guibg=wp00}
 hi { group = "TSDanker",                                                guifg=wp07}
-hi { group = "TSType",                                                  guifg=wp10}
-hi { group = "TSTypeBuiltin",                                           guifg=wp02}
-hi { group = "TSVariable",                                              guifg=wp11}
+hi { group = "TSType",                               gui='bold',        guifg=wp14}
+hi { group = "TSTypeBuiltin",                        gui='bold',        guifg=wp02}
+hi { group = "TSVariable",                                              guifg=wp07}
 hi { group = "TSVariableBuiltin",                                       guifg=wp11}
 
 
@@ -248,3 +248,65 @@ hi { group = "NvimDapVirtualTextInfo",                                  guifg=wp
 hi { group = 'TSDefinition',                                            guifg=wp00,      guibg=wp11}
 hi { group = 'TSDefinitionUsage',                                       guifg=wp00,      guibg=wp13}
 
+-- Telescope
+-- hi { group = 'TelescopePreviewMessageFillchar',                         guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsSpecialComment',                          guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsDiffUntracked',                           guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsIdentifier',                              guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsDiffDelete',                              guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsDiffChange',                              guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewDirectory',                               guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsVariable',                                guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsOperator',                                guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsFunction',                                guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsConstant',                                guifg=wp00,      guibg=wp00}
+hi { group = 'TelescopeSelectionCaret',                                 guifg=wp07,      guibg=wp08}
+-- hi { group = 'TelescopeResultsDiffAdd',                                 guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsComment',                                 guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewMessage',                                 guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewExecute',                                 guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewCharDev',                                 guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeMultiSelection',                                 guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsStruct',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsNumber',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsMethod',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsLineNr',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsBorder',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewSticky',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewSocket',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewNormal',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewHyphen',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewBorder',                                  guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsTitle',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsField',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeResultsClass',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePromptPrefix',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePromptBorder',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewWrite',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewTitle',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewMatch',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewGroup',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewBlock',                                   guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePromptTitle',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewUser',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewSize',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewRead',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewPipe',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewLink',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewLine',                                    guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopePreviewDate',                                    guifg=wp00,      guibg=wp00}
+hi { group = 'TelescopeSelection',                                      guifg=wp15,      guibg=wp08}
+hi { group = 'TelescopeMatching',                                       guifg=wp11}
+-- hi { group = 'TelescopeNormal',                                         guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeBorder',                                         guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeTitle',                                          guifg=wp00,      guibg=wp00}
+
+hi { group = 'UltestPass',                                              guifg=wp02,      guibg=wp00}
+hi { group = 'UltestFail',                                              guifg=wp01,      guibg=wp00}
+hi { group = 'UltestRunning',                                           guifg=wp03,      guibg=wp00}
+
+-- hi UltestBorder ctermfg=Red guifg=#F70067
+-- hi UltestSummaryInfo ctermfg=cyan guifg=#00F1F5 gui=bold cterm=bold
+-- hi link UltestSummaryFile UltestSummaryInfo
+-- hi link UltestSummaryNamespace UltestSummaryInfo
+--

@@ -9,21 +9,31 @@ local fn = vim.fn
 -- end
 
 require("packer").startup(function()
-  local use = require("packer").use
+local use = require("packer").use
 
-  -- The plugin manager
-  use({ "wbthomason/packer.nvim", opt = true })
+-- The plugin manager
+use({ "wbthomason/packer.nvim", opt = true })
 
-  -- language server configs
-  use({ "neovim/nvim-lspconfig" })
+-- language server configs
+use({ "neovim/nvim-lspconfig" })
 
-  -- completion
-  use({ "hrsh7th/nvim-compe" })
+-- completion
+use({
+  "ms-jpq/coq_nvim",
+  branch = "coq",
+  requires = {
+    'ms-jpq/coq.artifacts', branch = "artifacts",
+    'ms-jpq/coq.thirdparty', branch = "3p"
+  }
+})
 
-  -- treesitter
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use({ "nvim-treesitter/nvim-treesitter-refactor" })
-  use({ "nvim-treesitter/playground" })
+-- snippets
+use({"L3MON4D3/LuaSnip"})
+
+-- treesitter
+use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+use({ "nvim-treesitter/nvim-treesitter-refactor" })
+use({ "nvim-treesitter/playground" })
 
   -- the statusbar and buffer bar
   use({
@@ -35,14 +45,14 @@ require("packer").startup(function()
 
   -- showing the git actions
   use({
-    "lewis6991/gitsigns.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
+  "lewis6991/gitsigns.nvim",
+  requires = {
+  "nvim-lua/plenary.nvim",
+  },
   })
 
   -- use git from inside vim
-  use({ "tpope/vim-fugitive" })
+  -- use({ "tpope/vim-fugitive" })
 
   -- toggle comments
   use({ "terrortylor/nvim-comment" })
@@ -57,7 +67,7 @@ require("packer").startup(function()
   })
 
   -- Latex
-  use({ "lervag/vimtex" })
+  -- use({ "lervag/vimtex" })
 
   -- DAP Debug
   use({
@@ -70,46 +80,48 @@ require("packer").startup(function()
     requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
   })
 
+  use({ 'mfussenegger/nvim-dap-python' })
+
   -- cmake
-  use({ "ilyachur/cmake4vim" })
+  -- use({ "ilyachur/cmake4vim" })
 
   -- format
   use({ "mhartington/formatter.nvim" })
 
   -- better terminals
-  use({
-    "s1n7ax/nvim-terminal",
-    config = function()
-      vim.o.hidden = true
-      require("nvim-terminal").setup()
-    end,
-  })
+  -- use({
+  --   "s1n7ax/nvim-terminal",
+  --   config = function()
+  --     vim.o.hidden = true
+  --     require("nvim-terminal").setup()
+  --   end,
+  -- })
 
-  use({
-    "termhn/i3-vim-nav",
-    requires = {
-      "christoomey/vim-tmux-navigator",
-    },
-  })
+  -- use({
+  --   "termhn/i3-vim-nav",
+  --   requires = {
+  --     "christoomey/vim-tmux-navigator",
+  --   },
+  -- })
 
   -- bazel
-  use({
-    "google/vim-maktaba",
-  })
-  use({
-    "bazelbuild/vim-bazel",
-  })
+  -- use({
+  --   "google/vim-maktaba",
+  -- })
+  -- use({
+  --   "bazelbuild/vim-bazel",
+  -- })
 
   -- TMUX
   use({
-    "aserowy/tmux.nvim",
+  "aserowy/tmux.nvim",
     config = function()
       require("tmux").setup({
         -- overwrite default configuration
         -- here, e.g. to enable default bindings
         copy_sync = {
           -- enables copy sync and overwrites all register actions to
-          -- sync registers *, +, unnamed, and 0 till 9 from tmux in advance
+          -- registers *, +, unnamed, and 0 till 9 from tmux in advance
           enable = true,
         },
         navigation = {
@@ -136,4 +148,18 @@ require("packer").startup(function()
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
+
+  -- Testrunner
+  -- use { 
+    -- "rcarriga/vim-ultest",
+    -- requires = {"vim-test/vim-test"},
+    -- run = ":UpdateRemotePlugins"
+  -- }
+  --use({ "mhartington/formatter.nvim" })
+
+  -- better terminals
+  -- use({
+  --   "s1n7ax/nvim-terminal",
+  --   config = function()
+
 end)

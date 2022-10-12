@@ -1,0 +1,18 @@
+- name: Create nvim config directory
+  file:
+    path: ~/.config/nvim
+    state: directory
+  tags: nvim, config
+
+- name: Install nvim config
+  copy:
+    src: ./configs/nvim/config
+    dest: ~/.config/nvim/config
+  tags: nvim, config
+
+- name: Install/Update i3 and optional libraries
+  kewlfft.aur.aur:
+    name: nvim-packer-git
+    state: latest
+  become: yes
+  tags: nvim, install

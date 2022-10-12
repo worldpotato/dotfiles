@@ -1,14 +1,14 @@
-require("lspconfig").bashls.setup({})
-require("lspconfig").cmake.setup({})
-require("lspconfig").pylsp.setup({})
-require("lspconfig").ccls.setup({
+require("lspconfig").bashls.setup(coq.lsp_ensure_capabilities({}))
+require("lspconfig").cmake.setup(coq.lsp_ensure_capabilities({}))
+require("lspconfig").pylsp.setup(coq.lsp_ensure_capabilities({}))
+require("lspconfig").ccls.setup(coq.lsp_ensure_capabilities({
   filetypes = { "c", "cpp", "objc", "objcpp" },
   settings = {
     showInactiveRegions = false,
   },
-})
+}))
 
-require("lspconfig").texlab.setup({
+require("lspconfig").texlab.setup(coq.lsp_ensure_capabilities({
   settings = {
     latex = {
       build = {
@@ -25,7 +25,7 @@ require("lspconfig").texlab.setup({
       },
     },
   },
-})
+}))
 
 -- Mappings.
 local opts = { noremap = true, silent = true }
