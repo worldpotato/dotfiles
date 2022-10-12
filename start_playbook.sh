@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 usage="[-h] <ansible-parameter>
 typical usage: ./start_playbook.sh --tags rofi --skip-tags install"
