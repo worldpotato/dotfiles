@@ -1,18 +1,26 @@
-- name: Create i3 config directory
-  file:
-    path: ~/.config/i3
-    state: directory
-  tags: i3, config
+- name: i3 configuration
+  tags:
+    - i3
+  block:
+  - name: Create i3 config directory
+    file:
+      path: ~/.config/i3
+      state: directory
+    tags:
+      - config
 
-- name: Install i3 configs
-  copy:
-    src: ./configs/i3/config
-    dest: ~/.config/i3/config
-  tags: i3, config
+  - name: Install i3 configs
+    copy:
+      src: ./configs/i3/config
+      dest: ~/.config/i3/config
+    tags:
+      - config
 
-- name: Install/Update i3 and optional libraries
-  kewlfft.aur.aur:
-    name: i3-gaps
-    state: latest
-  become: yes
-  tags: i3, install
+  - name: Install/Update i3 and optional libraries
+    kewlfft.aur.aur:
+      name: i3-gaps
+      state: latest
+    become: yes
+    tags:
+      - install
+
