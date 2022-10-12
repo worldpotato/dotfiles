@@ -10,7 +10,7 @@
   gather_facts: false
   # become: true
   tasks:
-    - include_tasks: ./configs/rofi/playbook.yaml
+    - include_tasks: ./configs/rofi/rofi_playbook.yaml
       tags: rofi
     - include_tasks: ./configs/pacman/nvim_playbook.yaml
       tags: install
