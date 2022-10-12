@@ -26,6 +26,6 @@
       tags: xorg
     - include_tasks: ./configs/polybar/playbook.yaml
       tags: polybar
-    - include_tasks: ./configs/nvim/playbook.yaml
+    - include_tasks: ./configs/nvim/nvim_playbook.yaml
       tags: nvim
 
