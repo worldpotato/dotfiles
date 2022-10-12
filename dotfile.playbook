@@ -18,7 +18,7 @@
       tags: i3
     - include_tasks: ./configs/sudo/playbook.yaml
       tags: sudo
-    - include_tasks: ./configs/kitty/playbook.yaml
+    - include_tasks: ./configs/kitty/kitty_playbook.yaml
       tags: kitty
     - include_tasks: ./configs/qutebrowser/playbook.yaml
       tags: qutebrowser
