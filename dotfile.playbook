@@ -22,7 +22,7 @@
       tags: kitty
     - include_tasks: ./configs/qutebrowser/qutebrowser_playbook.yaml
       tags: qutebrowser
-    - include_tasks: ./configs/xorg/playbook.yaml
+    - include_tasks: ./configs/xorg/xorg_playbook.yaml
       tags: xorg
     - include_tasks: ./configs/polybar/polybar_playbook.yaml
       tags: polybar
