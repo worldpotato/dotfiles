@@ -16,7 +16,7 @@
       tags: install
     - include_tasks: ./configs/i3/i3_playbook.yaml
       tags: i3
-    - include_tasks: ./configs/sudo/playbook.yaml
+    - include_tasks: ./configs/sudo/sudo_playbook.yaml
       tags: sudo
     - include_tasks: ./configs/kitty/kitty_playbook.yaml
       tags: kitty
