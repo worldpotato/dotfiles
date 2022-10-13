@@ -1,0 +1,26 @@
+- name: nvim configuration
+  tags:
+    - nvim
+  block:
+  - name: Create nvim config directory
+    file:
+      path: ~/.config/nvim
+      state: directory
+    tags:
+      - config
+
+  - name: Install nvim configs
+    copy:
+      src: ./configs/nvim/
+      dest: ~/.config/nvim/
+    tags:
+      - config
+
+  - name: Install/Update nvim and optional libraries
+    kewlfft.aur.aur:
+      name: nvim-packer-git
+      state: latest
+    become: yes
+    tags:
+      - install
+

@@ -149,6 +149,10 @@ use({ "nvim-treesitter/playground" })
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
+  use({
+    'simrat39/rust-tools.nvim'
+  })
+
   -- Testrunner
   -- use { 
     -- "rcarriga/vim-ultest",

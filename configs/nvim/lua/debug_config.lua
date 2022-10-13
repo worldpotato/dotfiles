@@ -76,6 +76,7 @@ dap.configurations.cpp = {
     runInTerminal = false,
   },
 }
+dap.configurations.rust = dap.configurations.cpp
 
 require("dapui").setup({
   icons = { expanded = "▾", collapsed = "▸" },
@@ -87,7 +88,7 @@ require("dapui").setup({
     edit = "e",
     repl = "r",
   },
-  sidebar = {
+  layouts = {
     -- open_on_start = true,
     -- You can change the order of elements in the sidebar
     elements = {
@@ -100,7 +101,7 @@ require("dapui").setup({
     size = 80,
     position = "right", -- Can be "left" or "right"
   },
-  tray = {
+  layouts = {
     -- open_on_start = true,
     elements = { "repl" },
     size = 15,
