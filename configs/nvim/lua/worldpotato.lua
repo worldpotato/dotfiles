@@ -173,7 +173,7 @@ hi { group = "TSFloat",                                                 guifg=wp
 hi { group = "TSFunction",                                              guifg=wp12}
 hi { group = "TSFuncBuiltin",                                           guifg=wp02}
 hi { group = "TSFuncMacro",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSInclude",                                               guifg=wp07,     guibg=wp08}
+hi { group = "TSInclude",                                               guifg=wp07,      guibg=wp08}
 hi { group = "TSKeyword",                            gui='bold',        guifg=wp11}
 hi { group = "TSKeywordFunction",                    gui='bold',        guifg=wp11}
 hi { group = "TSKeywordReturn",                      gui='bold',        guifg=wp11}
@@ -217,7 +217,8 @@ hi { group = "TSType",                               gui='bold',        guifg=wp
 hi { group = "TSTypeBuiltin",                        gui='bold',        guifg=wp02}
 hi { group = "TSVariable",                                              guifg=wp07}
 hi { group = "TSVariableBuiltin",                                       guifg=wp11}
-
+hi { group = 'TSDefinition',                         gui='underline',   guifg=wp00,      guibg=wp15} -- mark if cursor stays on word
+hi { group = 'TSDefinitionUsage',                                       guifg=wp00,      guibg=wp15}
 
 -- DAP debug
 hi { group = "DapUIVariable",                                           guifg=wp07}
@@ -243,10 +244,6 @@ hi { group = "DapUIBreakpointsLine",                                    guifg=wp
 hi { group = "NvimDapVirtualText",                                      guifg=wp06}
 hi { group = "NvimDapVirtualTextError",                                 guifg=wp01}
 hi { group = "NvimDapVirtualTextInfo",                                  guifg=wp03}
-
--- Treesitter
-hi { group = 'TSDefinition',                                            guifg=wp00,      guibg=wp11}
-hi { group = 'TSDefinitionUsage',                                       guifg=wp00,      guibg=wp13}
 
 -- Telescope
 -- hi { group = 'TelescopePreviewMessageFillchar',                         guifg=wp00,      guibg=wp00}

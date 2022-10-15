@@ -46,14 +46,21 @@ dap.configurations.python = {
 }
 
 -- C/CPP/Rust
+dap.adapters.rust = {
+  type = "executable",
+  command = "/usr/bin/lldb-vscode", -- adjust as needed
+  name = "rust",
+}
+
 dap.adapters.lldb = {
   type = "executable",
   command = "/usr/bin/lldb-vscode", -- adjust as needed
   name = "lldb",
 }
+
 dap.configurations.cpp = {
   {
-    name = "Launch",
+    name = "Default",
     type = "lldb",
     request = "launch",
     program = function()
@@ -78,45 +85,45 @@ dap.configurations.cpp = {
 }
 dap.configurations.rust = dap.configurations.cpp
 
-require("dapui").setup({
-  icons = { expanded = "▾", collapsed = "▸" },
-  mappings = {
-    -- Use a table to apply multiple mappings
-    expand = { "<CR>", "<2-LeftMouse>" },
-    open = "o",
-    remove = "d",
-    edit = "e",
-    repl = "r",
-  },
-  layouts = {
-    -- open_on_start = true,
-    -- You can change the order of elements in the sidebar
-    elements = {
-      -- Provide as ID strings or tables with "id" and "size" keys
-      -- { id = "stacks", size = 0.33 },
-      { id = "watches", size = 00.33 },
-      { id = "breakpoints", size = 0.33 },
-      { id = "scopes", size = 0.33},
-    },
-    size = 80,
-    position = "right", -- Can be "left" or "right"
-  },
-  layouts = {
-    -- open_on_start = true,
-    elements = { "repl" },
-    size = 15,
-    position = "bottom", -- Can be "bottom" or "top"
-  },
-  floating = {
-    max_height = nil, -- These can be integers or a float between 0 and 1.
-    max_width = nil, -- Floats will be treated as percentage of your screen.
-    mappings = {
-      close = { "q", "<Esc>" },
-    },
-  },
-  windows = { indent = 1 },
-})
-
+require("dapui").setup({})
+--   icons = { expanded = "▾", collapsed = "▸" },
+--   mappings = {
+--     -- Use a table to apply multiple mappings
+--     expand = { "<CR>", "<2-LeftMouse>" },
+--     open = "o",
+--     remove = "d",
+--     edit = "e",
+--     repl = "r",
+--   },
+--   layouts = {
+--     -- open_on_start = true,
+--     -- You can change the order of elements in the sidebar
+--     elements = {
+--       -- Provide as ID strings or tables with "id" and "size" keys
+--       -- { id = "stacks", size = 0.33 },
+--       { id = "watches", size = 00.33 },
+--       { id = "breakpoints", size = 0.33 },
+--       { id = "scopes", size = 0.33},
+--     },
+--     size = 80,
+--     position = "right", -- Can be "left" or "right"
+--   },
+--   -- layouts = {
+--   --   -- open_on_start = true,
+--   --   elements = { "repl" },
+--   --   size = 15,
+--   --   position = "bottom", -- Can be "bottom" or "top"
+--   -- },
+--   floating = {
+--     max_height = nil, -- These can be integers or a float between 0 and 1.
+--     max_width = nil, -- Floats will be treated as percentage of your screen.
+--     mappings = {
+--       close = { "q", "<Esc>" },
+--     },
+--   },
+--   windows = { indent = 1 },
+-- })
+--
 -- dap_virtual_text
 require("nvim-dap-virtual-text").setup {
     enabled = true,                     -- enable this plugin (the default)
@@ -132,13 +139,4 @@ require("nvim-dap-virtual-text").setup {
     virt_text_win_col = nil             -- position the virtual text at a fixed window column (starting from the first text column) ,
                                         -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
 }
--- keymaps
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>gB",
-  "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-  opts
-)
 
