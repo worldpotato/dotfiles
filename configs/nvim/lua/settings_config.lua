@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 -- activate mouse
 vim.o.mouse = "a"
+-- make splits on the right
+vim.o.splitright = true
 -- vim.o.noshowmode=true
 vim.o.showtabline=2
 -- Syntax
