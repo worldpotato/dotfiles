@@ -76,6 +76,15 @@ use({ "nvim-treesitter/playground" })
   })
 
   use({
+    "nvim-telescope/telescope-dap.nvim",
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "mfussenegger/nvim-dap" 
+    }
+  })
+
+
+  use({
     "theHamsta/nvim-dap-virtual-text",
     requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
   })

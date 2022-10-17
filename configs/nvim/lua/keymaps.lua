@@ -24,6 +24,7 @@ map("n", "<leader>v", ":CHADopen<cr>", options)
 
 -- terminal
 map("t", "<leader><ESC>", "<C-\\><C-n>", options)
+map("n", "<leader>tt", ":vsplit term://fish<CR>", options)
 
 -- dap
 -- map("n", "<F1>", ":Ultest<CR>", options)
