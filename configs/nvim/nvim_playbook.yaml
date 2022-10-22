@@ -9,12 +9,27 @@
     tags:
       - config
 
-  - name: Install nvim configs
+  - name: Install nvim lua folder
     copy:
-      src: ./configs/nvim/
-      dest: ~/.config/nvim/
+      src: ./configs/nvim/lua/
+      dest: ~/.config/nvim/lua/
     tags:
       - config
+
+  - name: Install nvim init
+    copy:
+      src: ./configs/nvim/init.lua
+      dest: ~/.config/nvim/init.lua
+    tags:
+      - config
+
+  - name: Install nvim colors
+    copy:
+      src: ./configs/nvim/colors/
+      dest: ~/.config/nvim/colors/
+    tags:
+      - config
+      
 
   - name: Install/Update nvim and optional libraries
     kewlfft.aur.aur:
