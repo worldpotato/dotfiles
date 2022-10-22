@@ -12,7 +12,7 @@
   tasks:
     - include_tasks: ./configs/rofi/rofi_playbook.yaml
       tags: rofi
-    - include_tasks: ./configs/pacman/nvim_playbook.yaml
+    - include_tasks: ./configs/pacman/pacman_playbook.yaml
       tags: install
     - include_tasks: ./configs/i3/i3_playbook.yaml
       tags: i3
