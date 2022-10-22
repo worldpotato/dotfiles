@@ -60,3 +60,4 @@ vim.o.ttimeout=true
 vim.o.ttimeoutlen=50
 
 vim.o.number=true
+vim.o.splitkeep=screen
