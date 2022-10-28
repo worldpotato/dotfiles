@@ -156,69 +156,73 @@ hi { group = "LspDiagnosticsSignInformation",        gui='bold',          guifg=
 hi { group = "LspDiagnosticsVirtualTextInformation", gui='bold',          guifg=wp07}
 
 -- Treesitter
-hi { group = "TSAnnotation",                                            guifg=wp07,      guibg=wp00}
-hi { group = "TSAttribute",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSBoolean",                            gui='bold',        guifg=wp14}
-hi { group = "TSCharacter",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSComment",                                               guifg=wp06}
-hi { group = "TSConditional",                                           guifg=wp14}
-hi { group = "TSConstant",                           gui='bold',        guifg=wp06}
-hi { group = "TSConstBuiltin",                       gui='bold',        guifg=wp05}
-hi { group = "TSConstMacro",                                            guifg=wp07,      guibg=wp00}
-hi { group = "TSConstructor",                        gui='bold',        guifg=wp05}
-hi { group = "TSError",                              gui='undercurl',   guifg=wp07,      guibg=wp00}
-hi { group = "TSException",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSField",                              gui='bold',        guifg=wp06}
-hi { group = "TSFloat",                                                 guifg=wp07,      guibg=wp00}
-hi { group = "TSFunction",                                              guifg=wp12}
-hi { group = "TSFuncBuiltin",                                           guifg=wp02}
-hi { group = "TSFuncMacro",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSInclude",                                               guifg=wp07,      guibg=wp08}
-hi { group = "TSKeyword",                            gui='bold',        guifg=wp11}
-hi { group = "TSKeywordFunction",                    gui='bold',        guifg=wp11}
-hi { group = "TSKeywordReturn",                      gui='bold',        guifg=wp11}
-hi { group = "TSLabel",                                                 guifg=wp07,      guibg=wp00}
-hi { group = "TSMethod",                             gui="bold",        guifg=wp12}
-hi { group = "TSNamespace",                                             guifg=wp03}
-hi { group = "TSNone",                                                  guifg=wp07}
-hi { group = "TSNumber",                                                guifg=wp15}
-hi { group = "TSOperator",                                              guifg=wp14}
-hi { group = "TSParameter",                          gui='bold',        guifg=wp09}
-hi { group = "TSParameterReference",                                    guifg=wp07,      guibg=wp00}
-hi { group = "TSProperty",                                              guifg=wp07}
-hi { group = "TSPunctDelimeter",                                        guifg=wp15,      guibg=wp00}
-hi { group = "TSPunctBracket",                                          guifg=wp15}
-hi { group = "TSPunctSpecial",                                          guifg=wp15}
-hi { group = "TSRepeat",                             gui='bold',        guifg=wp14}
-hi { group = "TSString",                             gui='bold',        guifg=wp03}
-hi { group = "TSStringRegex",                                           guifg=wp13}
-hi { group = "TSStringEscape",                                          guifg=wp13}
-hi { group = "TSStringSpecial",                                         guifg=wp13}
-hi { group = "TSSymbol",                                                guifg=wp07,      guibg=wp00}
-hi { group = "TSTag",                                                   guifg=wp07,      guibg=wp00}
-hi { group = "TSTagAttribute",                                          guifg=wp07,      guibg=wp00}
-hi { group = "TSTagDelimiter",                                          guifg=wp07,      guibg=wp00}
-hi { group = "TSText",                                                  guifg=wp07,      guibg=wp00}
-hi { group = "TSStrong",                                                guifg=wp07,      guibg=wp00}
-hi { group = "TSEmphasis",                                              guifg=wp07,      guibg=wp00}
-hi { group = "TSUnderline",                                             guifg=wp07,      guibg=wp00}
-hi { group = "TSStrike",                                                guifg=wp07,      guibg=wp00}
-hi { group = "TSTitle",                                                 guifg=wp07,      guibg=wp00}
-hi { group = "TSLiteral",                                               guifg=wp07,      guibg=wp00}
-hi { group = "TSURI",                                                   guifg=wp07,      guibg=wp00}
-hi { group = "TSMath",                                                  guifg=wp07,      guibg=wp00}
-hi { group = "TSTextReference",                                         guifg=wp07,      guibg=wp00}
-hi { group = "TSEnvironment",                                           guifg=wp03}
-hi { group = "TSEnvironmentName",                                       guifg=wp04,      guibg=wp00}
-hi { group = "TSNote",                                                  guifg=wp07,      guibg=wp00}
-hi { group = "TSWarning",                                               guifg=wp07,      guibg=wp00}
-hi { group = "TSDanker",                                                guifg=wp07}
-hi { group = "TSType",                               gui='bold',        guifg=wp14}
-hi { group = "TSTypeBuiltin",                        gui='bold',        guifg=wp02}
-hi { group = "TSVariable",                                              guifg=wp07}
-hi { group = "TSVariableBuiltin",                                       guifg=wp11}
-hi { group = 'TSDefinition',                         gui='underline',   guifg=wp00,      guibg=wp15} -- mark if cursor stays on word
-hi { group = 'TSDefinitionUsage',                                       guifg=wp00,      guibg=wp15}
+hi { group = "@Annotation",                                            guifg=wp07,      guibg=wp00}
+hi { group = "@Attribute",                                             guifg=wp07,      guibg=wp00}
+hi { group = "@Boolean",                            gui='bold',        guifg=wp14}
+hi { group = "@Character",                                             guifg=wp07,      guibg=wp00}
+hi { group = "@Comment",                                               guifg=wp06}
+hi { group = "@Conditional",                                           guifg=wp14}
+hi { group = "@Constant",                           gui='bold',        guifg=wp06}
+hi { group = "@ConstBuiltin",                       gui='bold',        guifg=wp05}
+hi { group = "@ConstMacro",                                            guifg=wp07,      guibg=wp00}
+hi { group = "@Constructor",                        gui='bold',        guifg=wp05}
+hi { group = "@Error",                              gui='undercurl',   guifg=wp07,      guibg=wp00}
+hi { group = "@Exception",                                             guifg=wp07,      guibg=wp00}
+hi { group = "@Field",                              gui='bold',        guifg=wp06}
+hi { group = "@Float",                                                 guifg=wp07,      guibg=wp00}
+hi { group = "@function",                           gui='bold',        guifg=wp05}
+hi { group = "@function.call",                      gui='bold',        guifg=wp11}
+hi { group = "@function.macro",                     gui='bold',        guifg=wp12}
+hi { group = "@FuncBuiltin",                                           guifg=wp02}
+hi { group = "@FuncMacro",                                             guifg=wp15,      guibg=wp00}
+hi { group = "@Include",                                               guifg=wp06}
+hi { group = "@Keyword",                            gui='bold',        guifg=wp06}
+hi { group = "@KeywordFunction",                    gui='bold',        guifg=wp11}
+hi { group = "@KeywordReturn",                      gui='bold',        guifg=wp11}
+hi { group = "@Label",                                                 guifg=wp07,      guibg=wp00}
+hi { group = "@Method",                             gui="bold",        guifg=wp12}
+hi { group = "@Namespace",                          gui="bold",        guifg=wp03}
+hi { group = "@None",                                                  guifg=wp07}
+hi { group = "@Number",                                                guifg=wp15}
+hi { group = "@Operator",                                              guifg=wp14}
+hi { group = "@Parameter",                          gui='bold',        guifg=wp09}
+hi { group = "@ParameterReference",                                    guifg=wp07,      guibg=wp00}
+hi { group = "@Property",                                              guifg=wp07}
+hi { group = "@Punctuation.bracket",                                   guifg=wp07}
+hi { group = "@Punctuation.delimiter",                                 guifg=wp07}
+hi { group = "@Punctuation.Special",                                   guifg=wp07}
+hi { group = "@PunctBracket",                                          guifg=wp15}
+hi { group = "@PunctSpecial",                                          guifg=wp15}
+hi { group = "@Repeat",                             gui='bold',        guifg=wp14}
+hi { group = "@String",                             gui='bold',        guifg=wp02}
+hi { group = "@StringRegex",                                           guifg=wp13}
+hi { group = "@StringEscape",                                          guifg=wp13}
+hi { group = "@StringSpecial",                                         guifg=wp13}
+hi { group = "@Symbol",                                                guifg=wp07,      guibg=wp00}
+hi { group = "@Tag",                                                   guifg=wp07,      guibg=wp00}
+hi { group = "@TagAttribute",                                          guifg=wp07,      guibg=wp00}
+hi { group = "@TagDelimiter",                                          guifg=wp07,      guibg=wp00}
+hi { group = "@Text",                                                  guifg=wp07,      guibg=wp00}
+hi { group = "@Strong",                                                guifg=wp07,      guibg=wp00}
+hi { group = "@Emphasis",                                              guifg=wp07,      guibg=wp00}
+hi { group = "@Underline",                                             guifg=wp07,      guibg=wp00}
+hi { group = "@Strike",                                                guifg=wp07,      guibg=wp00}
+hi { group = "@Title",                                                 guifg=wp07,      guibg=wp00}
+hi { group = "@Literal",                                               guifg=wp07,      guibg=wp00}
+hi { group = "@URI",                                                   guifg=wp07,      guibg=wp00}
+hi { group = "@Math",                                                  guifg=wp07,      guibg=wp00}
+hi { group = "@TextReference",                                         guifg=wp07,      guibg=wp00}
+hi { group = "@Environment",                                           guifg=wp03}
+hi { group = "@EnvironmentName",                                       guifg=wp04,      guibg=wp00}
+hi { group = "@Note",                                                  guifg=wp07,      guibg=wp00}
+hi { group = "@Warning",                                               guifg=wp07,      guibg=wp00}
+hi { group = "@Danker",                                                guifg=wp07}
+hi { group = "@Type",                               gui='bold',        guifg=wp14}
+hi { group = "@TypeBuiltin",                        gui='bold',        guifg=wp02}
+hi { group = "@Variable",                                              guifg=wp07}
+hi { group = "@VariableBuiltin",                                       guifg=wp11}
+hi { group = '@Definition',                         gui='underline',   guifg=wp00,      guibg=wp15} -- mark if cursor stays on word
+hi { group = '@DefinitionUsage',                                       guifg=wp00,      guibg=wp15}
 
 -- DAP debug
 hi { group = "DapUIVariable",                                           guifg=wp07}
