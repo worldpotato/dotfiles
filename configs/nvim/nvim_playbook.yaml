@@ -23,14 +23,6 @@
     tags:
       - config
 
-  - name: Install nvim colors
-    copy:
-      src: ./configs/nvim/colors/
-      dest: ~/.config/nvim/colors/
-    tags:
-      - config
-      
-
   - name: Install/Update nvim and optional libraries
     kewlfft.aur.aur:
       name: nvim-packer-git

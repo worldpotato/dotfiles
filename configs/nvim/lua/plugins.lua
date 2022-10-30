@@ -9,31 +9,33 @@ local fn = vim.fn
 -- end
 
 require("packer").startup(function()
-local use = require("packer").use
+  local use = require("packer").use
 
--- The plugin manager
-use({ "wbthomason/packer.nvim", opt = true })
+  -- The plugin manager
+  use({ "wbthomason/packer.nvim", opt = true })
 
--- language server configs
-use({ "neovim/nvim-lspconfig" })
+  -- language server configs
+  use({ "neovim/nvim-lspconfig" })
 
--- completion
-use({
-  "ms-jpq/coq_nvim",
-  branch = "coq",
-  requires = {
-    'ms-jpq/coq.artifacts', branch = "artifacts",
-    'ms-jpq/coq.thirdparty', branch = "3p"
-  }
-})
+  -- completion
+  use({
+    "ms-jpq/coq_nvim",
+    branch = "coq",
+    requires = {
+      "ms-jpq/coq.artifacts",
+      branch = "artifacts",
+      "ms-jpq/coq.thirdparty",
+      branch = "3p",
+    },
+  })
 
--- snippets
-use({"L3MON4D3/LuaSnip"})
+  -- snippets
+  use({ "L3MON4D3/LuaSnip" })
 
--- treesitter
-use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-use({ "nvim-treesitter/nvim-treesitter-refactor" })
-use({ "nvim-treesitter/playground" })
+  -- treesitter
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use({ "nvim-treesitter/nvim-treesitter-refactor" })
+  use({ "nvim-treesitter/playground" })
 
   -- the statusbar and buffer bar
   use({
@@ -45,14 +47,14 @@ use({ "nvim-treesitter/playground" })
 
   -- showing the git actions
   use({
-  "lewis6991/gitsigns.nvim",
-  requires = {
-  "nvim-lua/plenary.nvim",
-  },
+    "lewis6991/gitsigns.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
   })
 
   -- use git from inside vim
-  -- use({ "tpope/vim-fugitive" })
+  use({ "tpope/vim-fugitive" })
 
   -- toggle comments
   use({ "terrortylor/nvim-comment" })
@@ -79,17 +81,16 @@ use({ "nvim-treesitter/playground" })
     "nvim-telescope/telescope-dap.nvim",
     requires = {
       "nvim-telescope/telescope.nvim",
-      "mfussenegger/nvim-dap" 
-    }
+      "mfussenegger/nvim-dap",
+    },
   })
-
 
   use({
     "theHamsta/nvim-dap-virtual-text",
     requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
   })
 
-  use({ 'mfussenegger/nvim-dap-python' })
+  use({ "mfussenegger/nvim-dap-python" })
 
   -- cmake
   -- use({ "ilyachur/cmake4vim" })
@@ -123,7 +124,7 @@ use({ "nvim-treesitter/playground" })
 
   -- TMUX
   use({
-  "aserowy/tmux.nvim",
+    "aserowy/tmux.nvim",
     config = function()
       require("tmux").setup({
         -- overwrite default configuration
@@ -159,14 +160,18 @@ use({ "nvim-treesitter/playground" })
   })
 
   use({
-    'simrat39/rust-tools.nvim'
+    "simrat39/rust-tools.nvim",
+  })
+
+  use({
+    "numToStr/FTerm.nvim",
   })
 
   -- Testrunner
-  -- use { 
-    -- "rcarriga/vim-ultest",
-    -- requires = {"vim-test/vim-test"},
-    -- run = ":UpdateRemotePlugins"
+  -- use {
+  -- "rcarriga/vim-ultest",
+  -- requires = {"vim-test/vim-test"},
+  -- run = ":UpdateRemotePlugins"
   -- }
   --use({ "mhartington/formatter.nvim" })
 
@@ -174,5 +179,4 @@ use({ "nvim-treesitter/playground" })
   -- use({
   --   "s1n7ax/nvim-terminal",
   --   config = function()
-
 end)
