@@ -3,7 +3,7 @@ require("lspconfig").cmake.setup(coq.lsp_ensure_capabilities({}))
 require("lspconfig").pylsp.setup(coq.lsp_ensure_capabilities({}))
 require("lspconfig").rust_analyzer.setup(coq.lsp_ensure_capabilities({}))
 require("lspconfig").ccls.setup(coq.lsp_ensure_capabilities({
-  filetypes = { "c", "cpp", "objc", "objcpp" },
+  filetypes = { "c", "cpp", "objc", "objcpp"},
   settings = {
     showInactiveRegions = false,
   },

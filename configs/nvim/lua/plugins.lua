@@ -60,13 +60,13 @@ require("packer").startup(function()
   use({ "terrortylor/nvim-comment" })
 
   -- using fzf
-  use({
-    "ibhagwan/fzf-lua",
-    requires = {
-      "vijaymarupudi/nvim-fzf",
-      "kyazdani42/nvim-web-devicons", -- optional for icons
-    },
-  })
+  -- use({
+  --   "ibhagwan/fzf-lua",
+  --   requires = {
+  --     "vijaymarupudi/nvim-fzf",
+  --     "kyazdani42/nvim-web-devicons", -- optional for icons
+  --   },
+  -- })
 
   -- Latex
   -- use({ "lervag/vimtex" })
@@ -166,6 +166,21 @@ require("packer").startup(function()
   use({
     "numToStr/FTerm.nvim",
   })
+
+  use({ "stevearc/dressing.nvim" })
+  use({ "windwp/nvim-autopairs" })
+
+  -- use({
+  --   "folke/noice.nvim",
+  --   requires = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     "MunifTanjim/nui.nvim",
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     "rcarriga/nvim-notify",
+  --   },
+  -- })
 
   -- Testrunner
   -- use {

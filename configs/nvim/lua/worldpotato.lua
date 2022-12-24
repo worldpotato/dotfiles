@@ -81,7 +81,7 @@ local link = function(from, to)
   vim.cmd(string.format("hi! link %s %s", from, to))
 end
 
-hi { group = "ErrorMsg",                             guibg=wp00,         guibg=wp01}
+hi { group = "ErrorMsg",                             guifg=wp01}
 
  -- Groups used in the 'highlight' and 'guicursor' options default value.
 hi { group = "IncSearch",                            gui=none}
@@ -244,10 +244,19 @@ hi { group = "DapUIBreakpointsPath",                                    guifg=wp
 hi { group = "DapUIBreakpointsInfo",                                    guifg=wp15}
 hi { group = "DapUIBreakpointsCurrentLine",                             guifg=wp02}
 hi { group = "DapUIBreakpointsLine",                                    guifg=wp02}
+hi { group = "001",                                                     guifg=wp01}
 
 hi { group = "NvimDapVirtualText",                                      guifg=wp06}
 hi { group = "NvimDapVirtualTextError",                                 guifg=wp01}
 hi { group = "NvimDapVirtualTextInfo",                                  guifg=wp03}
+hi { group = "NvimDapVirtualTextChanged",                               guifg=wp02}
+
+hi { group = "DapBreakpointSignText",                                   guifg=wp01,      guibg=wp00}
+-- hi { group = "DapBreakpointSignLine",                                   guifg=wp03}
+hi { group = "DapBreakpointSignNum",                                    guifg=wp07,      guibg=wp00}
+hi { group = "DapBreakpointPositionText",                               guifg=wp03}
+hi { group = "DapBreakpointPositionLine",                               guifg=wp03}
+hi { group = "DapBreakpointPositionNum",                                guifg=wp03}
 
 -- Telescope
 -- hi { group = 'TelescopePreviewMessageFillchar',                         guifg=wp00,      guibg=wp00}
@@ -311,3 +320,12 @@ hi { group = 'UltestRunning',                                           guifg=wp
 -- hi link UltestSummaryFile UltestSummaryInfo
 -- hi link UltestSummaryNamespace UltestSummaryInfo
 --
+hi { group = 'DiagnosticError',                                         guifg=wp00,      guibg=wp01}
+hi { group = 'DiagnosticWarn',                                          guifg=wp00,      guibg=wp03}
+hi { group = 'DiagnosticInfo',                                          guifg=wp00,      guibg=wp07}
+hi { group = 'DiagnosticHint',                                          guifg=wp00,      guibg=wp06}
+hi { group = 'DiagnosticVirtualTextError',                                         guibg=wp00,      guifg=wp01}
+hi { group = 'DiagnosticVirtualTextWarn',                                          guibg=wp00,      guifg=wp03}
+hi { group = 'DiagnosticVirtualTextInfo',                                          guibg=wp00,      guifg=wp07}
+hi { group = 'DiagnosticVirtualTextHint',                                          guibg=wp00,      guifg=wp06}
+
