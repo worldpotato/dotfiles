@@ -169,6 +169,7 @@ require("packer").startup(function()
 
   use({ "stevearc/dressing.nvim" })
   use({ "windwp/nvim-autopairs" })
+  use({ "Pocco81/auto-save.nvim" })
 
   -- use({
   --   "folke/noice.nvim",

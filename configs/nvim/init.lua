@@ -12,6 +12,7 @@ require("lightline_config")
 require("fzf_config")
 
 -- setup plugins
+
 require("coq_config")
 require("lsp_config")
 require("treesitter_config")
@@ -24,4 +25,5 @@ require("telescope_config")
 -- require("noice_config")
 -- require("test_config")
 require("autopairs_config")
+require("auto-save_config")
 require("keymaps")
