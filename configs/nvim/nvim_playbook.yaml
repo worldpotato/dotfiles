@@ -9,17 +9,10 @@
     tags:
       - config
 
-  - name: Install nvim lua folder
+  - name: Install nvim configs
     copy:
-      src: ./configs/nvim/lua/
-      dest: ~/.config/nvim/lua/
-    tags:
-      - config
-
-  - name: Install nvim init
-    copy:
-      src: ./configs/nvim/init.lua
-      dest: ~/.config/nvim/init.lua
+      src: ./configs/nvim/
+      dest: ~/.config/nvim/
     tags:
       - config
 
