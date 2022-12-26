@@ -6,3 +6,4 @@ notebooks:
 desktops:
   hosts:
     desktop-virus
+    # 192.168.178.81
