@@ -14,28 +14,48 @@ require("packer").startup(function()
   -- The plugin manager
   use({ "wbthomason/packer.nvim", opt = true })
 
-  -- language server configs
-  use({ "neovim/nvim-lspconfig" })
+  use({ "williamboman/mason.nvim" })
+  use({ "williamboman/mason-lspconfig.nvim" })
+  use({ "neovim/nvim-lspconfig"})
 
-  -- completion
-  use({
-    "ms-jpq/coq_nvim",
-    branch = "coq",
-    requires = {
-      "ms-jpq/coq.artifacts",
-      branch = "artifacts",
-      "ms-jpq/coq.thirdparty",
-      branch = "3p",
-    },
-  })
-
-  -- snippets
-  use({ "L3MON4D3/LuaSnip" })
+  -- toggle comments
+  use({ "terrortylor/nvim-comment" })
 
   -- treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use({ "nvim-treesitter/nvim-treesitter-refactor" })
   use({ "nvim-treesitter/playground" })
+
+  -- completion
+  use({ 'hrsh7th/nvim-cmp' })
+  use({ 'hrsh7th/cmp-nvim-lsp'})
+  use({ 'hrsh7th/cmp-buffer'})
+  use({ 'hrsh7th/cmp-path'})
+  use({ 'hrsh7th/cmp-cmdline'})
+  use({ 'hrsh7th/cmp-vsnip'})
+
+  -- snippets 
+  use({ 'hrsh7th/vim-vsnip'})
+  -- completion
+
+  use({
+    "simrat39/rust-tools.nvim",
+  })
+
+-- showing the git actions
+  use({
+    "lewis6991/gitsigns.nvim",
+      requires = {
+        "nvim-lua/plenary.nvim",
+      },
+  })
+
+  use({
+     "nvim-telescope/telescope-dap.nvim",
+     requires = {
+       "nvim-telescope/telescope.nvim",
+       "mfussenegger/nvim-dap",
+     },
+   })
 
   -- the statusbar and buffer bar
   use({
@@ -44,33 +64,6 @@ require("packer").startup(function()
       "itchyny/lightline.vim",
     },
   })
-
-  -- showing the git actions
-  use({
-    "lewis6991/gitsigns.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
-  })
-
-  -- use git from inside vim
-  use({ "tpope/vim-fugitive" })
-
-  -- toggle comments
-  use({ "terrortylor/nvim-comment" })
-
-  -- using fzf
-  -- use({
-  --   "ibhagwan/fzf-lua",
-  --   requires = {
-  --     "vijaymarupudi/nvim-fzf",
-  --     "kyazdani42/nvim-web-devicons", -- optional for icons
-  --   },
-  -- })
-
-  -- Latex
-  -- use({ "lervag/vimtex" })
-
   -- DAP Debug
   use({
     "rcarriga/nvim-dap-ui",
@@ -78,25 +71,50 @@ require("packer").startup(function()
   })
 
   use({
-    "nvim-telescope/telescope-dap.nvim",
-    requires = {
-      "nvim-telescope/telescope.nvim",
-      "mfussenegger/nvim-dap",
-    },
-  })
-
-  use({
     "theHamsta/nvim-dap-virtual-text",
     requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" },
   })
+  -- format
+  use({ "mhartington/formatter.nvim" })
 
-  use({ "mfussenegger/nvim-dap-python" })
+  use({ "chaoren/vim-wordmotion" })
+  use({ "ms-jpq/chadtree" })
+  use({ "Pocco81/auto-save.nvim" })
+  use({ "windwp/nvim-autopairs" })
+-- new
+-------------------------------------------------------------------------
+-- old
+
+
+  -- language server configs
+  -- use({ "neovim/nvim-lspconfig" })
+
+  -- completion
+  -- use({
+  --   "ms-jpq/coq_nvim",
+  --   branch = "coq",
+  --   requires = {
+  --     "ms-jpq/coq.artifacts",
+  --     branch = "artifacts",
+  --     "ms-jpq/coq.thirdparty",
+  --     branch = "3p",
+  --   },
+  -- })
+
+  -- snippets
+  -- use({ "L3MON4D3/LuaSnip" })
+
+  -- Latex
+  -- use({ "lervag/vimtex" })
+
+
+
+
+  -- use({ "mfussenegger/nvim-dap-python" })
 
   -- cmake
   -- use({ "ilyachur/cmake4vim" })
 
-  -- format
-  use({ "mhartington/formatter.nvim" })
 
   -- better terminals
   -- use({
@@ -123,53 +141,43 @@ require("packer").startup(function()
   -- })
 
   -- TMUX
-  use({
-    "aserowy/tmux.nvim",
-    config = function()
-      require("tmux").setup({
-        -- overwrite default configuration
-        -- here, e.g. to enable default bindings
-        copy_sync = {
-          -- enables copy sync and overwrites all register actions to
-          -- registers *, +, unnamed, and 0 till 9 from tmux in advance
-          enable = true,
-        },
-        navigation = {
-          -- enables default keybindings (C-hjkl) for normal mode
-          enable_default_keybindings = true,
-        },
-        resize = {
-          -- enables default keybindings (A-hjkl) for normal mode
-          enable_default_keybindings = true,
-        },
-      })
-    end,
-  })
+  -- use({
+  --   "aserowy/tmux.nvim",
+  --   config = function()
+  --     require("tmux").setup({
+  --       -- overwrite default configuration
+  --       -- here, e.g. to enable default bindings
+  --       copy_sync = {
+  --         -- enables copy sync and overwrites all register actions to
+  --         -- registers *, +, unnamed, and 0 till 9 from tmux in advance
+  --         enable = true,
+  --       },
+  --       navigation = {
+  --         -- enables default keybindings (C-hjkl) for normal mode
+  --         enable_default_keybindings = true,
+  --       },
+  --       resize = {
+  --         -- enables default keybindings (A-hjkl) for normal mode
+  --         enable_default_keybindings = true,
+  --       },
+  --     })
+  --   end,
+  -- })
+  --
 
-  use({
-    "chaoren/vim-wordmotion",
-  })
+  -- use({
+  --   "nvim-telescope/telescope.nvim",
+  --   requires = { { "nvim-lua/plenary.nvim" } },
+  -- })
 
-  use({
-    "ms-jpq/chadtree",
-  })
 
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = { { "nvim-lua/plenary.nvim" } },
-  })
+  -- use({
+  --   "numToStr/FTerm.nvim",
+  -- })
 
-  use({
-    "simrat39/rust-tools.nvim",
-  })
-
-  use({
-    "numToStr/FTerm.nvim",
-  })
-
-  use({ "stevearc/dressing.nvim" })
-  use({ "windwp/nvim-autopairs" })
-  use({ "Pocco81/auto-save.nvim" })
+  -- use({ "stevearc/dressing.nvim" })
+  -- use({ "windwp/nvim-autopairs" })
+  -- use({ "Pocco81/auto-save.nvim" })
 
   -- use({
   --   "folke/noice.nvim",

@@ -50,10 +50,6 @@ vim.api.nvim_set_keymap(
 -- lsp.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
 
-local ft = vim.api.nvim_buf_get_option(0, "filetype")
-print("filetype:")
-print(ft)
-
 vim.api.nvim_set_keymap("n", "gic", "<cmd>lua require('telescope.builtin').lsp_incoming_calls()<CR>", opts)
 vim.api.nvim_set_keymap("n", "goc", "<cmd>lua require('telescope.builtin').lsp_outcoming_calls()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-k", "<cmd>lua require('telescope.builtin').lsp_workspace_symols()<CR>", opts)

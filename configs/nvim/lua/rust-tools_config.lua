@@ -42,10 +42,10 @@ local opts = {
       other_hints_prefix = "=> ",
 
       -- whether to align to the length of the longest line in the file
-      max_len_align = false,
+      max_len_align = true,
 
       -- padding from the left if max_len_align is true
-      max_len_align_padding = 1,
+      max_len_align_padding = 3,
 
       -- whether to align to the extreme right or not
       right_align = false,
@@ -162,7 +162,13 @@ local opts = {
   server = {
     -- standalone file support
     -- setting it to false may improve startup time
-    standalone = true,
+    standalone = true, 
+    settings = {
+      ["rust-analyzer"] = {
+        inlayHints = { locationLinks = false },
+        checkOnSave = {command = "clippy"},
+      }
+    },
   }, -- rust-analyzer options
 
   -- debugging stuff
