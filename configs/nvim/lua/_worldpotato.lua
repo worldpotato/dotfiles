@@ -16,8 +16,6 @@
 
 --  First remove all existing highlighting
 
-vim = vim
-
 vim.cmd([[
   highlight clear
   syntax reset
@@ -86,147 +84,145 @@ end
 hi({ group = "ErrorMsg", guifg = wp01 })
 
 -- Groups used in the 'highlight' and 'guicursor' options default value.
-hi({ group = "IncSearch", gui = "NONE" })
+hi({ group = "IncSearch", gui = none })
 hi({ group = "ModeMsg", gui = none })
-hi({ group = "VertSplit", gui = "reverse", guifg = wp00 })
-hi({ group = "Visual", gui = "NONE", guifg = wp00, guibg = wp07 })
+hi({ group = "VertSplit", gui = "bold", guifg = wp06 })
+hi({ group = "Visual", gui = none, guifg = wp00, guibg = wp07 })
 hi({ group = "VisualNOS", gui = none })
-hi({ group = "DiffText", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "Directory", gui = "NONE", guifg = wp04 })
-hi({ group = "LineNr", gui = "NONE", guifg = wp07, guibg = wp00 })
+hi({ group = "DiffText", gui = none, guifg = wp01, guibg = wp00 })
+hi({ group = "Directory", gui = none, guifg = wp04 })
+hi({ group = "LineNr", gui = none, guifg = wp07, guibg = wp00 })
 hi({ group = "CursorLineNr", gui = "bold", guifg = wp15, guibg = wp00 })
-hi({ group = "MoreMsg", gui = "NONE", guifg = wp02 })
-hi({ group = "Question", gui = "NONE", guifg = wp02 })
-hi({ group = "Search", gui = "NONE", guifg = wp08, guibg = wp11 })
-hi({ group = "Whitespace", gui = "NONE", guifg = wp08 })
-hi({ group = "SpecialKey", gui = "NONE", guifg = wp08, guibg = wp01 })
-hi({ group = "Title", gui = "NONE", guifg = wp05 })
-hi({ group = "WarningMsg", gui = "NONE", guifg = wp01 })
-hi({ group = "WildMenu", gui = "NONE", guifg = wp00, guibg = wp11 })
-hi({ group = "Folded", gui = "NONE", guifg = wp04, guibg = wp00 })
-hi({ group = "FoldColumn", gui = "NONE", guifg = wp04, guibg = wp07 })
-hi({ group = "DiffAdd", gui = "NONE", guifg = wp10, guibg = wp00 })
-hi({ group = "DiffChange", gui = "NONE", guifg = wp05, guibg = wp00 })
-hi({ group = "DiffDelete", gui = "NONE", guifg = wp01, guibg = wp00 })
+hi({ group = "MoreMsg", gui = none, guifg = wp02 })
+hi({ group = "Question", gui = none, guifg = wp02 })
+hi({ group = "Search", gui = none, guifg = wp08, guibg = wp11 })
+hi({ group = "Whitespace", gui = none, guifg = wp08 })
+hi({ group = "SpecialKey", gui = none, guifg = wp08, guibg = wp01 })
+hi({ group = "Title", gui = none, guifg = wp05 })
+hi({ group = "WarningMsg", gui = none, guifg = wp01 })
+hi({ group = "WildMenu", gui = none, guifg = wp00, guibg = wp11 })
+hi({ group = "Folded", gui = none, guifg = wp04, guibg = wp00 })
+hi({ group = "FoldColumn", gui = none, guifg = wp04, guibg = wp07 })
+hi({ group = "DiffAdd", gui = none, guifg = wp10, guibg = wp00 })
+hi({ group = "DiffChange", gui = none, guifg = wp05, guibg = wp00 })
+hi({ group = "DiffDelete", gui = none, guifg = wp01, guibg = wp00 })
 hi({ group = "SpellBad", gui = "undercurl", guifg = wp15, guibg = wp01 })
-hi({ group = "NonText", gui = "NONE", guifg = wp03 })
-hi({ group = "MatchParen", gui = "NONE", guifg = wp00, guibg = wp01 })
-hi({ group = "Pmenu", gui = "NONE", guifg = wp07, guibg = wp00 })
-hi({ group = "PmenuThumb", gui = "NONE", guifg = wp06, guibg = wp08 })
-hi({ group = "PmenuSbar", gui = "NONE", guifg = wp06, guibg = wp07 })
-hi({ group = "PmenuSel", gui = "NONE", guifg = wp15, guibg = wp08 })
-hi({ group = "SignColumn", gui = "NONE", guifg = wp15, guibg = wp00 })
+hi({ group = "NonText", gui = none, guifg = wp03 })
+hi({ group = "MatchParen", gui = none, guifg = wp00, guibg = wp01 })
+hi({ group = "Pmenu", gui = none, guifg = wp07, guibg = wp00 })
+hi({ group = "PmenuThumb", gui = none, guifg = wp06, guibg = wp08 })
+hi({ group = "PmenuSbar", gui = none, guifg = wp06, guibg = wp07 })
+hi({ group = "PmenuSel", gui = none, guifg = wp15, guibg = wp08 })
+hi({ group = "SignColumn", gui = none, guifg = wp15, guibg = wp00 })
 
 -- GitSigns
-hi({ group = "GitSignsColumn", gui = "NONE", guifg = wp10, guibg = wp00 })
-hi({ group = "GitSignsAdd", gui = "NONE", guifg = wp10, guibg = wp00 })
-hi({ group = "GitSignsChange", gui = "NONE", guifg = wp11, guibg = wp00 })
-hi({ group = "GitSignsDelete", gui = "NONE", guifg = wp09, guibg = wp00 })
+hi({ group = "GitSignsColumn", gui = none, guifg = wp10, guibg = wp00 })
+hi({ group = "GitSignsAdd", gui = none, guifg = wp10, guibg = wp00 })
+hi({ group = "GitSignsChange", gui = none, guifg = wp11, guibg = wp00 })
+hi({ group = "GitSignsDelete", gui = none, guifg = wp09, guibg = wp00 })
 
-hi({ group = "GitSignsAddNr", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsChangeNr", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsDeleteNr", gui = "NONE", guifg = wp01, guibg = wp00 })
+hi({ group = "GitSignsAddNr", gui = none, guifg = wp01, guibg = wp00 })
+hi({ group = "GitSignsChangeNr", gui = none, guifg = wp01, guibg = wp00 })
+hi({ group = "GitSignsDeleteNr", gui = none, guifg = wp01, guibg = wp00 })
 
 hi({ group = "GitSignsAddLn", gui = "bold", guifg = wp01, guibg = wp00 })
 hi({ group = "GitSignsChangeLn", gui = "bold", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsDeleteLn", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsCurrentLineBlame", gui = "NONE", guifg = wp09, guibg = wp00 })
+hi({ group = "GitSignsDeleteLn", gui = none, guifg = wp01, guibg = wp00 })
+hi({ group = "GitSignsCurrentLineBlame", gui = none, guifg = wp09, guibg = wp00 })
 
 --  syntax highlighting
-hi({ group = "PreProc", gui = "NONE", guifg = wp01 })
-hi({ group = "Identifier", gui = "NONE", guifg = wp05 })
-hi({ group = "Comment", gui = "NONE", guifg = wp06 })
-hi({ group = "Constant", gui = "NONE", guifg = wp02 })
-hi({ group = "Special", gui = "NONE", guifg = wp14 })
-hi({ group = "Statement", gui = "NONE", guifg = wp12 })
-hi({ group = "Type", gui = "NONE", guifg = wp12 })
+hi({ group = "PreProc", gui = none, guifg = wp01 })
+hi({ group = "Identifier", gui = none, guifg = wp05 })
+hi({ group = "Comment", gui = none, guifg = wp06 })
+hi({ group = "Constant", gui = none, guifg = wp02 })
+hi({ group = "Special", gui = none, guifg = wp14 })
+hi({ group = "Statement", gui = none, guifg = wp12 })
+hi({ group = "Type", gui = none, guifg = wp12 })
 --
 --  Line and column mark
-hi({ group = "CursorLine", gui = "NONE", guibg = wp00 })
-hi({ group = "CursorColumn", gui = "NONE", guibg = wp00 })
+hi({ group = "CursorLine", gui = none, guibg = wp00 })
+hi({ group = "CursorColumn", gui = none, guibg = wp00 })
 
 --  termdebug
 hi({ group = "debugPC", gui = "bold", guifg = wp00, guibg = wp03 })
 hi({ group = "debugBreakpoint", gui = "bold", guifg = wp07, guibg = wp01 })
 
 --  nvim-lsp
-hi({ group = "LspDiagnosticsSignError", gui = "bold", guifg = wp01, guibg = wp00 })
-hi({ group = "LspDiagnosticsVirtualTextError", gui = "bold", guifg = wp09, guibg = wp00 })
-hi({ group = "LspDiagnosticsSignWarning", gui = "bold", guifg = wp03, guibg = wp00 })
+hi({ group = "LspDiagnosticsSignError", gui = "bold", guifg = wp00, guibg = wp01 })
+hi({ group = "LspDiagnosticsVirtualTextError", gui = "bold", guifg = wp00, guibg = wp09 })
+hi({ group = "LspDiagnosticsSignWarning", gui = "bold", guifg = wp00, guibg = wp03 })
 hi({ group = "LspDiagnosticsVirtualTextWarning", gui = "bold", guifg = wp03 })
 hi({ group = "LspDiagnosticsSignInformation", gui = "bold", guifg = wp00, guibg = wp07 })
 hi({ group = "LspDiagnosticsVirtualTextInformation", gui = "bold", guifg = wp07 })
 
 -- Treesitter
-hi({ group = "@annotation", guifg = wp07, guibg = wp00 })
-hi({ group = "@attribute", guifg = wp07, guibg = wp00 })
-hi({ group = "@boolean", gui = "bold", guifg = wp14 })
-hi({ group = "@character", guifg = wp07, guibg = wp00 })
-hi({ group = "@comment", gui = "italic", guifg = wp06 })
-hi({ group = "@conditional", gui = "italic", guifg = wp12 })
-hi({ group = "@constant", gui = "bold", guifg = wp06 })
-hi({ group = "@constant.builtin", gui = "italic", guifg = wp04 })
-hi({ group = "@const.macro", guifg = wp07, guibg = wp00 })
-hi({ group = "@constructor", gui = "bold", guifg = wp05 })
-hi({ group = "@error", gui = "undercurl", guifg = wp07, guibg = wp00 })
-hi({ group = "@exception", guifg = wp07, guibg = wp00 })
-hi({ group = "@field", gui = "bold", guifg = wp06 })
-hi({ group = "@float", guifg = wp07, guibg = wp00 })
-hi({ group = "@function", gui = "bold", guifg = wp07 })
+hi({ group = "@Annotation", guifg = wp07, guibg = wp00 })
+hi({ group = "@Attribute", guifg = wp07, guibg = wp00 })
+hi({ group = "@Boolean", gui = "bold", guifg = wp14 })
+hi({ group = "@Character", guifg = wp07, guibg = wp00 })
+hi({ group = "@Comment", guifg = wp06 })
+hi({ group = "@Conditional", guifg = wp14 })
+hi({ group = "@Constant", gui = "bold", guifg = wp06 })
+hi({ group = "@ConstBuiltin", gui = "bold", guifg = wp05 })
+hi({ group = "@ConstMacro", guifg = wp07, guibg = wp00 })
+hi({ group = "@Constructor", gui = "bold", guifg = wp05 })
+hi({ group = "@Error", gui = "undercurl", guifg = wp07, guibg = wp00 })
+hi({ group = "@Exception", guifg = wp07, guibg = wp00 })
+hi({ group = "@Field", gui = "bold", guifg = wp06 })
+hi({ group = "@Float", guifg = wp07, guibg = wp00 })
+hi({ group = "@function", gui = "bold", guifg = wp05 })
 hi({ group = "@function.call", gui = "bold", guifg = wp11 })
-hi({ group = "@function.macro", gui = "bold", guifg = wp05 })
-hi({ group = "@func.builtin", guifg = wp02 })
-hi({ group = "@func.macro", guifg = wp15, guibg = wp00 })
-hi({ group = "@include", guifg = wp06 })
-hi({ group = "@keyword", gui = "bold", guifg = wp03 })
-hi({ group = "@keyword.function", gui = "bold", guifg = wp11 })
-hi({ group = "@keyword.return", gui = "bold", guifg = wp09 })
-hi({ group = "@label", guifg = wp07, guibg = wp00 })
-hi({ group = "@method", gui = "bold", guifg = wp12 })
-hi({ group = "@namespace", gui = "bold", guifg = wp03 })
-hi({ group = "@none", guifg = wp07 })
-hi({ group = "@number", guifg = wp15 })
-hi({ group = "@operator", guifg = wp15 })
-hi({ group = "@parameter", gui = "italic", guifg = wp15 })
-hi({ group = "@parameter.reference", guifg = wp07, guibg = wp00 })
-hi({ group = "@property", guifg = wp07 })
-hi({ group = "@punctuation.bracket", guifg = wp07 })
-hi({ group = "@punctuation.delimiter", guifg = wp07 })
-hi({ group = "@punctuation.special", guifg = wp07 })
-hi({ group = "@punct.bracket", guifg = wp15 })
-hi({ group = "@punct.special", guifg = wp15 })
-hi({ group = "@repeat", gui = "italic", guifg = wp12 })
-hi({ group = "@string", gui = "bold", guifg = wp02 })
-hi({ group = "@string.regex", guifg = wp13 })
-hi({ group = "@string.escape", guifg = wp13 })
-hi({ group = "@string.special", guifg = wp13 })
-hi({ group = "@symbol", guifg = wp07, guibg = wp00 })
-hi({ group = "@special", guifg = wp07, guibg = wp00 })
-hi({ group = "@tag", guifg = wp07, guibg = wp00 })
-hi({ group = "@tag.attribute", guifg = wp07, guibg = wp00 })
-hi({ group = "@tag.delimiter", guifg = wp07, guibg = wp00 })
-hi({ group = "@text", guifg = wp07, guibg = wp00 })
-hi({ group = "@strong", guifg = wp07, guibg = wp00 })
-hi({ group = "@emphasis", guifg = wp07, guibg = wp00 })
-hi({ group = "@underline", guifg = wp07, guibg = wp00 })
-hi({ group = "@strike", guifg = wp07, guibg = wp00 })
-hi({ group = "@title", guifg = wp07, guibg = wp00 })
-hi({ group = "@literal", guifg = wp07, guibg = wp00 })
-hi({ group = "@uri", guifg = wp07, guibg = wp00 })
-hi({ group = "@math", guifg = wp07, guibg = wp00 })
-hi({ group = "@text.reference", guifg = wp07, guibg = wp00 })
-hi({ group = "@environment", guifg = wp03 })
-hi({ group = "@environment.name", guifg = wp04, guibg = wp00 })
-hi({ group = "@note", guifg = wp07, guibg = wp00 })
-hi({ group = "@warning", guifg = wp07, guibg = wp00 })
-hi({ group = "@danker", guifg = wp07 })
-hi({ group = "@type", gui = "bold", guifg = wp04 })
-hi({ group = "@type.qualifier", gui = "NONE", guifg = wp12 })
-hi({ group = "@type.builtin", gui = "bold", guifg = wp02 })
-hi({ group = "@variable", guifg = wp07 })
-hi({ group = "@variable.builtin", guifg = wp11 })
-hi({ group = "@definition", gui = "underline", guifg = wp00, guibg = wp15 }) -- mark if cursor stays on word
-hi({ group = "@definition.usage", guifg = wp00, guibg = wp15 })
+hi({ group = "@function.macro", gui = "bold", guifg = wp12 })
+hi({ group = "@FuncBuiltin", guifg = wp02 })
+hi({ group = "@FuncMacro", guifg = wp15, guibg = wp00 })
+hi({ group = "@Include", guifg = wp06 })
+hi({ group = "@Keyword", gui = "bold", guifg = wp06 })
+hi({ group = "@KeywordFunction", gui = "bold", guifg = wp11 })
+hi({ group = "@KeywordReturn", gui = "bold", guifg = wp11 })
+hi({ group = "@Label", guifg = wp07, guibg = wp00 })
+hi({ group = "@Method", gui = "bold", guifg = wp12 })
+hi({ group = "@Namespace", gui = "bold", guifg = wp03 })
+hi({ group = "@None", guifg = wp07 })
+hi({ group = "@Number", guifg = wp15 })
+hi({ group = "@Operator", guifg = wp14 })
+hi({ group = "@Parameter", gui = "bold", guifg = wp09 })
+hi({ group = "@ParameterReference", guifg = wp07, guibg = wp00 })
+hi({ group = "@Property", guifg = wp07 })
+hi({ group = "@Punctuation.bracket", guifg = wp07 })
+hi({ group = "@Punctuation.delimiter", guifg = wp07 })
+hi({ group = "@Punctuation.Special", guifg = wp07 })
+hi({ group = "@PunctBracket", guifg = wp15 })
+hi({ group = "@PunctSpecial", guifg = wp15 })
+hi({ group = "@Repeat", gui = "bold", guifg = wp14 })
+hi({ group = "@String", gui = "bold", guifg = wp02 })
+hi({ group = "@StringRegex", guifg = wp13 })
+hi({ group = "@StringEscape", guifg = wp13 })
+hi({ group = "@StringSpecial", guifg = wp13 })
+hi({ group = "@Symbol", guifg = wp07, guibg = wp00 })
+hi({ group = "@Tag", guifg = wp07, guibg = wp00 })
+hi({ group = "@TagAttribute", guifg = wp07, guibg = wp00 })
+hi({ group = "@TagDelimiter", guifg = wp07, guibg = wp00 })
+hi({ group = "@Text", guifg = wp07, guibg = wp00 })
+hi({ group = "@Strong", guifg = wp07, guibg = wp00 })
+hi({ group = "@Emphasis", guifg = wp07, guibg = wp00 })
+hi({ group = "@Underline", guifg = wp07, guibg = wp00 })
+hi({ group = "@Strike", guifg = wp07, guibg = wp00 })
+hi({ group = "@Title", guifg = wp07, guibg = wp00 })
+hi({ group = "@Literal", guifg = wp07, guibg = wp00 })
+hi({ group = "@URI", guifg = wp07, guibg = wp00 })
+hi({ group = "@Math", guifg = wp07, guibg = wp00 })
+hi({ group = "@TextReference", guifg = wp07, guibg = wp00 })
+hi({ group = "@Environment", guifg = wp03 })
+hi({ group = "@EnvironmentName", guifg = wp04, guibg = wp00 })
+hi({ group = "@Note", guifg = wp07, guibg = wp00 })
+hi({ group = "@Warning", guifg = wp07, guibg = wp00 })
+hi({ group = "@Danker", guifg = wp07 })
+hi({ group = "@Type", gui = "bold", guifg = wp14 })
+hi({ group = "@TypeBuiltin", gui = "bold", guifg = wp02 })
+hi({ group = "@Variable", guifg = wp07 })
+hi({ group = "@VariableBuiltin", guifg = wp11 })
+hi({ group = "@Definition", gui = "underline", guifg = wp00, guibg = wp15 }) -- mark if cursor stays on word
+hi({ group = "@DefinitionUsage", guifg = wp00, guibg = wp15 })
 
 -- DAP debug
 hi({ group = "DapUIVariable", guifg = wp07 })
@@ -262,7 +258,6 @@ hi({ group = "DapBreakpointPositionText", guifg = wp03 })
 hi({ group = "DapBreakpointPositionLine", guifg = wp03 })
 hi({ group = "DapBreakpointPositionNum", guifg = wp03 })
 
-hi({ group = "RustHints", gui = "italic", guifg = wp07, guibg = wp08 })
 -- Telescope
 -- hi { group = 'TelescopePreviewMessageFillchar',                         guifg=wp00,      guibg=wp00}
 -- hi { group = 'TelescopeResultsSpecialComment',                          guifg=wp00,      guibg=wp00}
@@ -312,9 +307,9 @@ hi({ group = "TelescopeSelectionCaret", guifg = wp07, guibg = wp08 })
 -- hi { group = 'TelescopePreviewDate',                                    guifg=wp00,      guibg=wp00}
 hi({ group = "TelescopeSelection", guifg = wp15, guibg = wp08 })
 hi({ group = "TelescopeMatching", guifg = wp11 })
-hi({ group = 'TelescopeNormal', guifg=wp07, guibg=wp00})
-hi({ group = 'TelescopeBorder', guifg=wp00, guibg=wp00})
-hi({ group = 'TelescopeTitle', guifg=wp07, guibg=wp00})
+-- hi { group = 'TelescopeNormal',                                         guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeBorder',                                         guifg=wp00,      guibg=wp00}
+-- hi { group = 'TelescopeTitle',                                          guifg=wp00,      guibg=wp00}
 
 hi({ group = "UltestPass", guifg = wp02, guibg = wp00 })
 hi({ group = "UltestFail", guifg = wp01, guibg = wp00 })
@@ -325,16 +320,95 @@ hi({ group = "UltestRunning", guifg = wp03, guibg = wp00 })
 -- hi link UltestSummaryFile UltestSummaryInfo
 -- hi link UltestSummaryNamespace UltestSummaryInfo
 --
-hi({ group = "DiagnosticError", guifg = wp01, guibg = wp00 })
-hi({ group = "DiagnosticWarn", guifg = wp03, guibg = wp00 })
-hi({ group = "DiagnosticInfo", guifg = wp07, guibg = wp00 })
-hi({ group = "DiagnosticHint", guifg = wp06, guibg = wp00 })
+hi({ group = "DiagnosticError", guifg = wp00, guibg = wp01 })
+hi({ group = "DiagnosticWarn", guifg = wp00, guibg = wp03 })
+hi({ group = "DiagnosticInfo", guifg = wp00, guibg = wp07 })
+hi({ group = "DiagnosticHint", guifg = wp00, guibg = wp06 })
 hi({ group = "DiagnosticVirtualTextError", guibg = wp00, guifg = wp01 })
 hi({ group = "DiagnosticVirtualTextWarn", guibg = wp00, guifg = wp03 })
 hi({ group = "DiagnosticVirtualTextInfo", guibg = wp00, guifg = wp07 })
 hi({ group = "DiagnosticVirtualTextHint", guibg = wp00, guifg = wp06 })
 
-hi({ group = "StatusLineNc", guibg = wp00, guifg = wp06 })
-
-hi({ group = "SymbolsOutlineConnector", guifg = wp07 })
-hi({ group = "FocusedSymbol", guifg = wp00, guibg = wp02 })
+-- RUST Tools
+-- link({ "rustConditional", "@Constant" })
+-- rustRepeat
+-- rustTypedef
+-- rustIdentifier
+-- rustStructure
+-- rustUnion
+-- rustUnionContextual
+-- rustOperator
+-- rustAssert
+-- rustPanic
+-- rustKeyword
+-- rustBoxPlacement
+-- rustExternCrate
+-- rustObsoleteExternMod
+-- rustFuncName
+-- rustPubScope
+-- rustSuper
+-- rustModPath
+-- rustStorage
+-- rustDefault
+-- rustInvalidBareKeyword
+-- rustPubScopeCrate
+-- rustPubScopeDelim
+-- rustModPathSep
+-- rustSelf
+-- rustExternCrateString
+-- rustString
+-- rustIdentifierPrime
+-- rustBoxPlacementParens
+-- rustBoxPlacementBalance
+-- rustMacroRepeatDelimiters
+-- rustMacroRepeatCount
+-- rustMacroRepeat
+-- rustMacroVariable
+-- rustReservedKeyword
+-- rustType
+-- rustTrait
+-- rustEnum
+-- rustEnumVariant
+-- rustBoolean
+-- rustFuncCall
+-- rustSigil
+-- rustArrowCharacter
+-- rustQuestionMark
+link("rustMacro", "@function.macro")
+link("rustFoldBraces", "Variable")
+-- rustEscapeError
+-- rustEscape
+-- rustEscapeUnicode
+-- rustStringContinuation
+-- rustDerive
+-- rustCommentLine
+-- rustCommentBlock
+-- rustCommentLineDocError
+-- rustCommentBlockDocError
+-- rustAttribute
+-- rustDeriveTrait
+-- rustDecNumber
+-- rustHexNumber
+-- rustOctNumber
+-- rustBinNumber
+-- rustFloat
+-- rustLifetime
+-- rustLifetimeCandidate
+-- rustGenericLifetimeCandid
+-- rustGenericRegion
+-- rustLabel
+-- rustCharacterInvalid
+-- rustCharacterInvalidUnicode
+-- rustCharacter
+-- rustShebang
+-- rustTodo
+-- rustCommentLineDoc
+-- rustCommentBlockNest
+-- rustCommentBlockDoc
+-- rustCommentBlockDocNest
+-- rustCommentBlockDocNestError
+-- rustFoldBraces
+-- rustNumber
+-- rustConstant
+-- rustCapsIdent
+-- rustFunction

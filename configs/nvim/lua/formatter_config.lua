@@ -35,12 +35,19 @@ require("formatter").setup({
         return {
           exe = "stylua",
           args = {
-            "--config-path " .. "~/.config/stylua/stylua.toml",
             "-",
           },
           stdin = true,
         }
       end,
+    },
+    rust = {
+      function()
+        return {
+          exe = "rustfmt",
+          stdin = true,
+        }
+      end
     },
   },
 })

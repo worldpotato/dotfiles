@@ -1,5 +1,4 @@
 -- Loading Rust specific plugins
-require("rust-tools_config") -- should be before the lsp_config otherwise some commands are not working
 
 local opts = { noremap = true, silent = true }
 

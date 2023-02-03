@@ -1,3 +1,4 @@
+local vim = vim
 -- use space as leader
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', {noremap = true, silent = true})
 vim.g.mapleader = " "
@@ -11,8 +12,8 @@ vim.o.showtabline=2
 -- Syntax
 vim.o.syntax="on"
 -- color for the vertical and horizontal line
-vim.o.cursorline=true
-vim.o.cursorcolumn=true
+vim.o.cursorline=false
+vim.o.cursorcolumn=false
 -- Height of the command bar
 vim.o.cmdheight=2
 -- Behavior of tab stop
@@ -48,11 +49,10 @@ vim.o.visualbell=false
 vim.o.tm=500
 -- " show unprintable characters
 vim.o.listchars="eol:¬,tab:┣━,trail:~,extends:>,precedes:<"
+vim.opt.fillchars = {eob = ' ', vert = ' '}
 vim.o.list=true
 -- " shows options for tabcompletion
 vim.o.wildmenu = true
--- " add some sort of fuzzy completion
-vim.o.path = vim.o.path .. "**"
 -- " enable to change buffer even if it has changes
 vim.o.hidden=true
 -- " remove weird "O" behaviour
@@ -61,3 +61,19 @@ vim.o.ttimeoutlen=50
 
 vim.o.number=true
 vim.o.splitkeep=screen
+
+-- diganostics
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.diagnostic.config({
+  virtual_text = true
+})
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = false,
+})
+

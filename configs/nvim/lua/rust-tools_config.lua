@@ -1,4 +1,3 @@
-local rt = require("rust-tools")
 -- Update this path
 local codelldb_path = "/usr/lib/codelldb/adapter/codelldb"
 local liblldb_path = "/usr/lib/codelldb/lldb/lib/liblldb.so"
@@ -18,7 +17,7 @@ local opts = {
     on_initialized = nil,
 
     -- automatically call RustReloadWorkspace when writing to a Cargo.toml file.
-    reload_workspace_from_cargo_toml = true,
+    -- reload_workspace_from_cargo_toml = true,
 
     -- These apply to the default RustSetInlayHints command
     inlay_hints = {
@@ -54,7 +53,7 @@ local opts = {
       right_align_padding = 7,
 
       -- The color of the hints
-      highlight = "Comment",
+      highlight = "RustHints",
     },
 
     -- options same as lsp hover / vim.lsp.util.open_floating_preview()
@@ -162,12 +161,15 @@ local opts = {
   server = {
     -- standalone file support
     -- setting it to false may improve startup time
-    standalone = true, 
+
+    on_attach = function(client)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
+    standalone = false,
     settings = {
       ["rust-analyzer"] = {
-        inlayHints = { locationLinks = false },
-        checkOnSave = {command = "clippy"},
-      }
+        checkOnSave = { command = "clippy" },
+      },
     },
   }, -- rust-analyzer options
 
@@ -178,3 +180,15 @@ local opts = {
 }
 
 require("rust-tools").setup(opts)
+-- Loading Rust specific plugins
+--require("rust-tools_config") -- should be before the lsp_config otherwise some commands are not working
+
+-- local opts = { noremap = true, silent = true }
+--
+-- -- Hover actions
+-- vim.keymap.set("n", "<Leader>rh", require("rust-tools").hover_actions.hover_actions, opts)
+-- -- Code action groups
+-- vim.keymap.set("n", "<Leader>ra", require("rust-tools").code_action_group.code_action_group, opts)
+-- -- run/debug
+-- vim.keymap.set("n", "<Leader>rr", require("rust-tools").runnables.runnables, opts)
+-- vim.keymap.set("n", "<Leader>rd", require("rust-tools").debuggables.debuggables, opts)
