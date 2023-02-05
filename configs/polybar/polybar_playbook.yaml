@@ -5,8 +5,8 @@
 
  - name: Install polybar config
    copy:
-     src: ./configs/polybar/config
-     dest: ~/.config/polybar/config
+     src: ./configs/polybar/config.ini
+     dest: ~/.config/polybar/config.ini
 
  - name: Install polybar launch script
    copy:
