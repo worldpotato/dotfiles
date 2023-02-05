@@ -1,19 +1,29 @@
 - name: Install/Update kitty and optional libraries
-  pacman:
-    name:
-      - kitty
-      - kitty-shell-integration
-      - kitty-terminfo
-    state: latest
-  become: yes
+  tags:
+    - kitty
+  block:
+    - name: install kitty
+      pacman:
+        name:
+          - kitty
+          - kitty-shell-integration
+          - kitty-terminfo
+        state: latest
+      become: yes
+      tags:
+        - install
 
-- name: Create kitty config directory
-  file:
-    path: ~/.config/kitty
-    state: directory
+    - name: create kitty config folder
+      file:
+        path: ~/.config/kitty
+        state: directory
+      tags:
+        - config
 
-- name: Install kitty config
-  copy:
-    src: ./configs/kitty/
-    dest: ~/.config/kitty/
+    - name: Install kitty config
+      copy:
+        src: ./configs/kitty/
+        dest: ~/.config/kitty/
+      tags:
+        - config
 
