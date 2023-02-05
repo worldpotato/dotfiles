@@ -1,21 +1,33 @@
- - name: create polybar config directory
-   file:
-     path: ~/.config/polybar
-     state: directory
+- name: create polybar config directory
+  tags:
+    - polybar
+  block:
+    - name: create polybar config folder
+      file:
+        path: ~/.config/polybar
+        state: directory
+      tags:
+        - config
 
- - name: Install polybar config
-   copy:
-     src: ./configs/polybar/config.ini
-     dest: ~/.config/polybar/config.ini
+    - name: Install polybar config
+      copy:
+        src: ./configs/polybar/config.ini
+        dest: ~/.config/polybar/config.ini
+      tags:
+        - config
 
- - name: Install polybar launch script
-   copy:
-     src: ./configs/polybar/launch.sh
-     dest: ~/.config/polybar/launch.sh
-     mode: a+x
+    - name: Install polybar launch script
+      copy:
+        src: ./configs/polybar/launch.sh
+        dest: ~/.config/polybar/launch.sh
+        mode: a+x
+      tags:
+        - config
 
- - name: Install/Update polybar and optional libraries
-   pacman:
-     name:
-       - polybar
-     state: latest
+    - name: Install/Update polybar and optional libraries
+      pacman:
+        name:
+          - polybar
+        state: latest
+      tags:
+        - install
