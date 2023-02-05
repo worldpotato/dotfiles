@@ -234,13 +234,14 @@ bindsym $mod+r mode "resize"
 
     # make the titlebar disapear
     new_window 1pixel
-    for_window [class=".*"] border pixel 1
+    for_window [class=".*"] border pixel 0
 
     gaps inner 10
     gaps outer -5
 
     # Activate smart borders (always)
-    # smart_borders on
+    smart_borders on
+    border_radius = 5
 
 # ============ autostart start applications =====================
     # exec --no-startup-id "~/.config/i3/create-workspace.sh" # make default workspace
