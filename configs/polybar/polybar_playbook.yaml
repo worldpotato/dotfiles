@@ -11,8 +11,17 @@
 
     - name: Install polybar config
       copy:
-        src: ./configs/polybar/config.ini
+        src: ./configs/polybar/config_desktops.ini
         dest: ~/.config/polybar/config.ini
+      when: inventory_hostname in groups['desktop']
+      tags:
+        - config
+
+    - name: Install polybar config
+      copy:
+        src: ./configs/polybar/config_notebooks.ini
+        dest: ~/.config/polybar/config.ini
+      when: inventory_hostname in groups['notebooks']
       tags:
         - config
 
