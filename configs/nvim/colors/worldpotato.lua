@@ -262,7 +262,7 @@ hi({ group = "DapBreakpointPositionText", guifg = wp03 })
 hi({ group = "DapBreakpointPositionLine", guifg = wp03 })
 hi({ group = "DapBreakpointPositionNum", guifg = wp03 })
 
-hi({ group = "RustHints", gui = "italic", guifg = wp07, guibg = wp08 })
+hi({ group = "RustHints", gui = "italic", guifg = wp07, guibg = "NONE" })
 -- Telescope
 -- hi { group = 'TelescopePreviewMessageFillchar',                         guifg=wp00,      guibg=wp00}
 -- hi { group = 'TelescopeResultsSpecialComment',                          guifg=wp00,      guibg=wp00}
