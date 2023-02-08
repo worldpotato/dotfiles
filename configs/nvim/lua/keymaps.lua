@@ -1,3 +1,4 @@
+local vim = vim
 local map = vim.api.nvim_set_keymap
 local options = { noremap = false, silent = true }
 -- Formatter
