@@ -201,6 +201,9 @@ local plugins = {
     "numToStr/FTerm.nvim",
     lazy = true,
     event = "VeryLazy",
+    config = function()
+      require("fterm_config")
+    end,
   },
 }
 
