@@ -118,19 +118,26 @@ hi({ group = "PmenuSel", gui = "NONE", guifg = wp15, guibg = wp08 })
 hi({ group = "SignColumn", gui = "NONE", guifg = wp15, guibg = wp00 })
 
 -- GitSigns
-hi({ group = "GitSignsColumn", gui = "NONE", guifg = wp10, guibg = wp00 })
-hi({ group = "GitSignsAdd", gui = "NONE", guifg = wp10, guibg = wp00 })
-hi({ group = "GitSignsChange", gui = "NONE", guifg = wp11, guibg = wp00 })
-hi({ group = "GitSignsDelete", gui = "NONE", guifg = wp09, guibg = wp00 })
+hi({ group = "GitBackground", gui = "NONE", guifg = "NONE", guibg = "NONE" })
+hi({ group = "GitFooter", gui = "NONE", guifg = "NONE", guibg = "NONE" })
+hi({ group = "GitHeader", gui = "NONE", guifg = "NONE", guibg = "NONE" })
+hi({ group = "GitBorder", gui = "NONE", guifg = wp07, guibg = wp00 })
+hi({ group = "GitLineNr", gui = "NONE", guifg = wp07, guibg = wp00 })
 
-hi({ group = "GitSignsAddNr", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsChangeNr", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsDeleteNr", gui = "NONE", guifg = wp01, guibg = wp00 })
+hi({ group = "GitComment", gui = "NONE", guifg = wp07, guibg = wp00 })
 
-hi({ group = "GitSignsAddLn", gui = "bold", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsChangeLn", gui = "bold", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsDeleteLn", gui = "NONE", guifg = wp01, guibg = wp00 })
-hi({ group = "GitSignsCurrentLineBlame", gui = "NONE", guifg = wp09, guibg = wp00 })
+hi({ group = "GitDiffAdd", gui = "NONE", guifg = wp01, guibg = wp01 })
+hi({ group = "GitDiffDelete", gui = "NONE", guifg = wp01, guibg = wp01 })
+
+hi({ group = "GitSignsDelete", gui = "NONE", guifg = wp01, guibg = wp00 })
+hi({ group = "GitSignsAdd", gui = "NONE", guifg = wp02, guibg = wp00 })
+hi({ group = "GitSignsChange", gui = "NONE", guifg = wp03, guibg = wp00 })
+
+hi({ group = "GitSignsAddLn", gui = "NONE", guifg = wp00, guibg = wp02 })
+hi({ group = "GitSignsDeleteLn", gui = "NONE", guifg = wp00, guibg = wp01 })
+
+hi({ group = "GitWordAdd", gui = "bold", guifg = wp00, guibg = wp10 })
+hi({ group = "GitWordDelete", gui = "bold", guifg = wp00, guibg = wp09 })
 
 --  syntax highlighting
 hi({ group = "PreProc", gui = "NONE", guifg = wp01 })

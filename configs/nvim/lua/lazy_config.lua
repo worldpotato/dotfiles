@@ -1,3 +1,4 @@
+local vim = vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -23,6 +24,7 @@ local plugins = {
       vim.cmd([[colorscheme worldpotato]])
     end,
   },
+
   {
     "nvim-telescope/telescope-dap.nvim",
     dependencies = {
@@ -31,10 +33,12 @@ local plugins = {
     },
     lazy = true,
   },
+
   {
     "nvim-lua/plenary.nvim",
     lazy = true,
   },
+
   {
     "nvim-telescope/telescope.nvim",
     dpendencies = {
@@ -45,6 +49,7 @@ local plugins = {
       require("telescope_config")
     end,
   },
+
   {
     "nvim-tree/nvim-tree.lua",
     lazy = true,
@@ -52,17 +57,23 @@ local plugins = {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
+    config = function()
+      require("nvim-tree").setup()
+    end
   },
+
   {
     "nvim-telescope/telescope-symbols.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     lazy = true,
   },
+
   {
     "mfussenegger/nvim-dap",
     ft = used_languages,
     lazy = true,
   },
+
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
@@ -71,6 +82,7 @@ local plugins = {
       require("mason_config")
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     lazy = true,
@@ -79,6 +91,7 @@ local plugins = {
       require("lsp_config")
     end,
   },
+
   {
     "stevearc/dressing.nvim",
     -- event = "VeryLazy",
@@ -86,6 +99,7 @@ local plugins = {
       require("dressing_config")
     end,
   },
+
   {
     "simrat39/symbols-outline.nvim",
     event = "VeryLazy",
@@ -93,6 +107,7 @@ local plugins = {
       require("symbols-outline_config")
     end,
   },
+
   {
     "nvim-lualine/lualine.nvim",
     lazy = false,
@@ -101,6 +116,7 @@ local plugins = {
       require("lualine_config")
     end,
   },
+
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
@@ -108,6 +124,7 @@ local plugins = {
       require("rust-tools_config")
     end,
   },
+
   {
     "mhartington/formatter.nvim",
     lazy = true,
@@ -116,6 +133,7 @@ local plugins = {
       require("formatter_config")
     end,
   },
+
   {
     "nvim-treesitter/playground",
     lazy = true,
@@ -125,6 +143,7 @@ local plugins = {
       require("treesitter_config")
     end,
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = true,
@@ -133,6 +152,7 @@ local plugins = {
       require("treesitter_config")
     end,
   },
+
   {
     "terrortylor/nvim-comment",
     lazy = true,
@@ -142,6 +162,7 @@ local plugins = {
       require("nvim_comment_config")
     end,
   },
+
   {
     "hrsh7th/nvim-cmp",
     lazy = true,
@@ -158,6 +179,7 @@ local plugins = {
       require("completion_config")
     end,
   },
+
   {
     "luukvbaal/statuscol.nvim",
     lazy = true,
@@ -166,6 +188,7 @@ local plugins = {
       require("statuscolumn_config")
     end,
   },
+
   {
     "rcarriga/nvim-dap-virtual-text",
     lazy = true,
@@ -175,6 +198,7 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+
   {
     "rcarriga/nvim-dap-ui",
     lazy = true,
@@ -186,23 +210,44 @@ local plugins = {
       require("debug_config")
     end,
   },
+
+  {
+    "mbbill/undotree",
+    lazy = false,
+    -- config = function()
+    --   require("undotree").setup()
+    -- end,
+  },
+
   {
     "tanvirtin/vgit.nvim",
-    lazy = true,
-    event = "VeryLazy",
+    lazy = false,
+    -- event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
     config = function()
       require("vgit_config")
+      -- require("vgit").setup()
     end,
   },
+
   {
     "numToStr/FTerm.nvim",
     lazy = true,
     event = "VeryLazy",
+  },
+
+  {
+    "folke/which-key.nvim",
     config = function()
-      require("fterm_config")
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
     end,
   },
 }
