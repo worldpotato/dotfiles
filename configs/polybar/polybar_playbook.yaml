@@ -13,7 +13,7 @@
       copy:
         src: ./configs/polybar/config_desktops.ini
         dest: ~/.config/polybar/config.ini
-      when: inventory_hostname in groups['desktop']
+      when: inventory_hostname in groups['desktops']
       tags:
         - config
 
