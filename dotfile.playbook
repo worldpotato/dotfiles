@@ -28,4 +28,6 @@
       tags: polybar
     - include_tasks: ./configs/nvim/nvim_playbook.yaml
       tags: nvim
+    - include_tasks: ./configs/local/local_playbook.yaml
+      tags: local
 

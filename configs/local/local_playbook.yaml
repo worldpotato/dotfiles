@@ -1,0 +1,46 @@
+- name: local_scripts
+  tags:
+    - local
+  block:
+  - name: Create local scripts directory
+    file:
+      path: ~/.local/share/background/images
+      state: directory
+    tags:
+      - config
+
+  - name: Install setbg script
+    copy:
+      src: ./configs/local/setbg
+      dest: ~/.local/share/background/setbg
+    tags:
+      - config
+
+  - name: Install autostart script
+    copy:
+      src: ./configs/local/autostart.sh
+      dest: ~/.local/share/autostart.sh
+    tags:
+      - config
+
+  - name: Install background image
+    copy:
+      src: ./configs/local/polygone_bird.png
+      dest: ~/.local/share/background/images/polygone_bird.png
+    tags:
+      - config
+
+  - name: create background image symlink
+    ansible.builtin.file:
+      src: polygone_bird.png
+      dest: ~/.local/share/background/images/desktop_background.png
+      state: link
+
+  - name: Install/Update feh and optional libraries
+    kewlfft.aur.aur:
+      name: feh
+      state: latest
+    become: yes
+    tags:
+      - install
+
