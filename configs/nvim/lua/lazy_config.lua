@@ -77,7 +77,8 @@ local plugins = {
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
-    event = "VeryLazy",
+    lazy = "true",
+    ft = used_languages,
     config = function()
       require("mason_config")
     end,
@@ -86,7 +87,8 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     lazy = true,
-    ft = { "lua", "toml" },
+    priority = 1000,
+    ft = used_languages,
     config = function()
       require("lsp_config")
     end,
@@ -239,6 +241,17 @@ local plugins = {
   },
 
   {
+    "aserowy/tmux.nvim",
+    config = function()
+      require("tmux").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  },
+
+  {
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
@@ -250,6 +263,24 @@ local plugins = {
       })
     end,
   },
+
+  {
+    "ErichDonGubler/lsp_lines.nvim",
+    lazy = "true",
+    event = "VeryLazy",
+    ft = used_languages,
+    config = function()
+      require("lsp_lines").setup()
+    end
+  },
+  {
+    "j-hui/fidget.nvim",
+    lazy = "true",
+    event = "VeryLazy",
+    config = function()
+      require("fidget").setup()
+    end
+  }
 }
 
 require("lazy").setup(plugins, opts)
