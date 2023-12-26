@@ -1,0 +1,37 @@
+# Guess the weather hourly
+#font pango:JetBrainsMono Nerd Font
+
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[MEM]
+command=free -h | awk '/Mem:/ { printf(" MEM %5s/%s \n", $3, $2) }'
+interval=1
+color=#FEC925
+
+# Query my default IP address only on startup
+[ip]
+command=$HOME/.config/i3blocks/ip.sh
+# command=hostname -i | awk '{ print "IP:" $1 }'
+interval=once
+color=#91E78B
+
+[battery]
+command=$HOME/.config/i3blocks/battery.sh
+interval=10
+
+
+[SOUND]
+full_text= VOL:  10% 
+command=$HOME/.config/i3blocks/sound_info.sh
+interval=1
+#signal=1
+
+# Update time every 5 seconds
+[time]
+command=date +%T
+interval=1
+
+
